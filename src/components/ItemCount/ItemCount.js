@@ -1,7 +1,5 @@
 import React from 'react';
 import { useState } from 'react';
-import './../style/itemCount.css'
-import producto from './../img/guitare.webp'
 
 const ItemCount = ({stock, agregarAlCarrito}) => {
 

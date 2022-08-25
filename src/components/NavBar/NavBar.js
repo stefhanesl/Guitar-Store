@@ -3,10 +3,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import imagen from './../img/logo-guitar.png'
-import './../style/navbar.css'
-// import { CartWidget } from '../CartWidget/CartWidget';
 import { CgShoppingCart } from 'react-icons/cg';
+import './../style/navbar.css'
+
 const NavBar = () => {
     return (
         <>
@@ -14,7 +13,7 @@ const NavBar = () => {
                 <Navbar.Brand href="#home">
                     <img
                             alt=""
-                            src={imagen}
+                            src='assets/img/logo-guitar.png'
                             id="logo"
                             width="70"
                             className="d-inline-block align-top"

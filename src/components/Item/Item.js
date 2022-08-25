@@ -1,6 +1,6 @@
 import React from 'react';
 import ItemCount from '../ItemCount/ItemCount';
-import guitarra from './../img/guitar1/guitar1.webp'
+
 
 
 const Item = ({guitar}) => {
@@ -27,10 +27,10 @@ const Item = ({guitar}) => {
     const descuento = parseFloat(discount.substring(0, discount.length-1))
     
     return (
-        <div className='guitar-card' id={id}>
+        <div className='guitar-tarjeta' id={id}>
 
             <div className='guitar-img-container'>
-                <img src={guitarra}
+                <img src={img1}
                     alt='guitar'
                     className='guitar-img'
                  
