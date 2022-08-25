@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2? family= Roboto+Serif:ital,opsz@1,8..144 & display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Roboto Serif', serif;  
+    font-size: 15px;
+}
+
+#barra-navegacion{
+    background: rgb(26, 25, 24);
+    padding: 0;
+    margin: 0;
+}
+.navbar>.container{
+    justify-content: center;
+}
+.navbar-brand{
+    padding: 0;
+    margin: 0;
+    margin-left: 40px;
+}
+#logo{
+    padding: 0;
+    margin: 0;
+}
+
+#barra{
+    display: flex;
+    gap: 15px;
+}
+#barra *{
+    color: #fff;
+}
+#carrito{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    margin-right: 30px;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+}
+#carrito #car{
+    position: absolute;
+    font-size: 30px;
+    margin: 0 auto;
+    align-items: flex-end;
+}
+#cantidad-carrito{
+    margin-bottom: 35px;
+    margin-left: 35px;
+    color: #212121;
+    background-color: #fff;
+    border-radius: 100%;
+    padding: 1px 3px; 
+    text-align: center;
+}
+
+

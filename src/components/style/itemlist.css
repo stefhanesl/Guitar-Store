@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+/* --------------------------- ITEM LIST CONTAINER -------------------------------- */
+
+.container-guitars{
+    max-width: 90%;
+    overflow-x: hidden;
+    background-color: rgb(243, 243, 252);
+    margin:auto;
+    
+}
+#fondo{
+    background: url('./../img/fondo.jpg');
+    height: 100%;
+    max-width: 100vw;
+    background-blend-mode: soft-light;
+    overflow: visible;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+/* --------------------------- ITEM LIST -------------------------------- */
+
+.guitars-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px ;
+    padding: 2em 1em;
+    box-sizing: border-box;
+}
+@media screen and (max-width: 1200px){
+    .guitars-grid {
+    grid-template-columns: repeat(2,1fr);
+    }
+}
+/* --------------------------- ITEM -------------------------------- */
+.guitar-card{
+    width: 400px;
+    max-height: 400px;
+    background-color: rgb(24, 22, 22);
+    padding: 5px 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.guitar-img-container img{
+    width: 150px;
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.card-body{
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+}
+.card-left h5{
+    
+    font-weight: 900;
+    font-size: 15px;
+}
+.card-left > p{
+    display: flex;
+    margin: 2px;
+}
+.card-right{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0 0 0;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+.card-right h3{
+    color: rgb(17, 235, 144);
+    font-weight: 800;
+}
+.card-right h5,
+.descuento-green{
+    width: 65px;
+    color: white;
+    background-color: rgb(9, 133, 9);
+    font-weight: 800;
+}
+.card-right .descuento-red{
+    background-color: red;
+}
+/* --------------------------- ITEM COUNT -------------------------------- */
+.agregar-guitars{
+    min-width: 90%;
+    max-height: 30px;
+    box-sizing: border-box;
+    display: flex;
+    margin: 0 auto;
+    margin-right: 40px;
+    padding: 0 3px 0 1px;
+    background-color: black;
+}
+#pantalla{
+    min-width: 70%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-content: center;
+    align-content: center;
+    justify-content: center;
+}
+#pantalla button{
+    color: #000;
+    font-size: 20px;
+    padding: 0;
+    font-weight: 900;
+}
+#cantidad{
+    padding: 4px;
+}
+
+.tarjeta-inferior{
+    display: flex;
+    max-width: 30%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: stretch;
+    margin: 0 auto;
+    font-size: 10px;
+}
+.tarjeta-inferior button{
+    text-align: center;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    background-color:white;
+    font-weight: 600;
+    color: black;
+    margin-left: 3px;
+    padding: 0 10px;
+}
