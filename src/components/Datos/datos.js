@@ -19,7 +19,7 @@ export const guitarras = [
     },
     {
         name: 'Rogue RR100 Rocketeer Electric Guitar Blue',
-        id: ':1275425410278',
+        id: '1275425410278',
         calification: 4.5,
         images: {
             img1: './assets/img/guitar3/guitar3.jpg',

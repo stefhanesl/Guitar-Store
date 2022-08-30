@@ -30,12 +30,11 @@ const ItemList = () => {
 
     return (
         <div className='guitars-grid'>
-            {
-                guitars.length > 0 && 
+            { guitars.length > 0 && 
                 <>
                     {guitars.map((guitar, indice) => {
                         return(
-                            <div key={indice} class='guitar-card'>
+                            <div key={indice} className='guitar-card'>
                                 <Item guitar={guitar}/>
                             </div>
                         )
