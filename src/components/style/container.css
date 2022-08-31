@@ -240,3 +240,6 @@ body{
     background-color: #fff;
     margin: 20px 0 0 0;
 }
+.item-detail-image img{
+    margin: 25% 25%;
+}
