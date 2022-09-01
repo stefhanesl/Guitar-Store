@@ -1,18 +1,18 @@
-import React, {useState, useEffect} from 'react';
 import './../style/container.css'
 import Item from '../Item/Item';
+import {Link} from 'react-router-dom';
 
 const ItemList = ({guitars}) => {
-
+    
     return (
         <div className='guitars-grid'>
             { guitars.length > 0 && 
                 <>
-                    {guitars.map((guitar, indice) => {
+                    {guitars.map(guitar => {
                         return(
-                            <div key={indice} className='guitar-card'>
+                            <Link key={parseInt(guitar.id)} className='guitar-card' to={`/item/${parseInt(guitar.id)}`}>
                                 <Item guitar={guitar}/>
-                            </div>
+                            </Link>
                         )
                     })}
                 </>
