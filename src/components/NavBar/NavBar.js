@@ -8,7 +8,7 @@ import { NavLink, Link } from 'react-router-dom';
 import './../style/navbar.css'
 import { CartWidget } from '../CartWidget/CartWidget';
 
-const NavBar = () => {
+const NavBar = ({agregarValorCarrito}) => {
     return (
         <>
             <Navbar id="barra-navegacion"  variant="light">
@@ -62,7 +62,7 @@ const NavBar = () => {
                     
                 </Container>
                 <div id='carrito'>
-                    <CartWidget />
+                    <CartWidget agregarValorCarrito={agregarValorCarrito}/>
                 </div>
             </Navbar>
         </>

@@ -7,24 +7,39 @@ import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Contacto from './components/Contacto/Contacto';
 import Nosotros from './components/Nosotros/Nosotros';
 import PaginaError from './components/PaginaError/PaginaError';
+import { useState, useEffect } from 'react';
+import Cart from './components/Cart/Cart';
+
+
 function App() {
+
+  const [agregarValorCarrito, setAgregarValorCarrito] = useState(0);
+  const [valor, setValor] = useState(0);
+
+  const agregarAlCarrito = (cantidad) => {
+      setValor(cantidad+valor)
+  }
+
+  useEffect(() => {
+    setAgregarValorCarrito(valor)
+  }, [valor]);
+
   return (
     <Router>
       <div className="App">
         <div>
-          <NavBar /> 
+          <NavBar agregarValorCarrito={agregarValorCarrito}/> 
             <Routes>
               <Route path='/'  element={<ItemListContainer/>} />
               <Route path='/category'  element={<ItemListContainer/>} />
               <Route path='/category/:tipoProducto'  element={<ItemListContainer/>} />
-              <Route path='/category/:identificador'  element={<ItemDetailContainer />} />
+              <Route path='/item/:identificador'  element={<ItemDetailContainer agregarAlCarrito={agregarAlCarrito}/>} />
               <Route path='/nosotros' element={<Nosotros />} />
               <Route path='/contacto' element={<Contacto />} />
-              <Route path='*' exact element={<PaginaError />} />
+              <Route path='*' element={<PaginaError />} />
+              <Route path='/cart' element={<Cart />} />
               
           </Routes>
-        {/* <ItemListContainer/>
-          <ItemDetailContainer /> */}
         </div>
         
       </div>

@@ -1,5 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
+import { NavLink } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const ItemCount = ({stock, agregarAlCarrito}) => {
 
@@ -33,8 +35,15 @@ const ItemCount = ({stock, agregarAlCarrito}) => {
                         onClick={() => agregarAlCarrito(cantidad)}
                         disabled={cantidad < 1 ? true : false}
                         >Agregar al carrito</button>
+
+            </div> 
+            <div class="tarjeta-inferior" to='/cart'>
+                <Link to='/cart' style={{ textDecoration: 'none' }}>
+                    <button id='terminar-compra'
+                                onClick={() => agregarAlCarrito(cantidad)}
+                                >Terminar Compra</button>
+                </Link>
             </div>
-        
         
         </div>
     );

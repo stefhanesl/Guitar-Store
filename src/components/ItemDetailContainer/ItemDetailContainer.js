@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 
 import { useParams } from 'react-router-dom';
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = ({agregarAlCarrito}) => {
     const { identificador } = useParams()
 
     const [product, setProduct] = useState({});
@@ -27,7 +27,7 @@ const ItemDetailContainer = () => {
             loading 
             ?   <h2>Cargando...</h2> 
             :   <div key={parseInt(product.id)} className='guitar-card' >
-                    <ItemDetail guitarra={product}/>
+                    <ItemDetail guitarra={product} agregarAlCarrito={agregarAlCarrito}/>
                 </div>
              
         }

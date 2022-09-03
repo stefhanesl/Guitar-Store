@@ -1,8 +1,9 @@
 import ItemCount from '../ItemCount/ItemCount';
 
-const ItemDetail = ({guitarra}) => {
+const ItemDetail = ({guitarra, agregarAlCarrito}) => {
 
-    const {name, price, discount, calification, images: {img1}, features:{feature1, feature2, feature3}, stock} = guitarra;
+    const {name, price, calification, images: {img1}, features:{feature1, feature2, feature3}, stock} = guitarra;
+
 
     return (
         <>
@@ -32,7 +33,7 @@ const ItemDetail = ({guitarra}) => {
                             </ul>
                         </div>
                     </div>
-                    <ItemCount  stock={stock}/>
+                    <ItemCount  stock={stock} agregarAlCarrito={agregarAlCarrito}/>
                 </div>
             </div>
 

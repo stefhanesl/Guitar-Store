@@ -231,6 +231,23 @@ body{
     border-radius: 20px;
     
 }
+.tarjeta-inferior #terminar-compra{
+    min-width: 300px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background-color:rgb(233, 229, 163);
+    font-weight: 600;
+    color: black;
+    margin-left: 3px;
+    padding: 10px 10px;
+    border-radius: 20px;
+    
+}
 /* --------------------------- ITEM DETAIL -------------------------------- */
 .item-detail-container{
     display: grid;

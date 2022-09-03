@@ -10,7 +10,7 @@ const ItemList = ({guitars}) => {
                 <>
                     {guitars.map(guitar => {
                         return(
-                            <Link key={parseInt(guitar.id)} className='guitar-card' to={`/item/${parseInt(guitar.id)}`}>
+                            <Link key={parseInt(guitar.id)} className='guitar-card' to={`/item/${guitar.id}`}>
                                 <Item guitar={guitar}/>
                             </Link>
                         )
