@@ -35,6 +35,7 @@ const ItemDetail = ({guitarra}) => {
                     <ItemCount  stock={stock}/>
                 </div>
             </div>
+
         </>
     );
 }

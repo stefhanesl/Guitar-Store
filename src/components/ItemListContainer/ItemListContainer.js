@@ -11,21 +11,14 @@ export const ItemListContainer = () => {
     const [guitars, setGuitars] = useState([]);
 
     useEffect(() => {
-        const asincronaDeDatos = async() => {
-            try {
-                const objetoGuitarras = await getItem(guitarras);
+        getItem(guitarras).then( respuesta => {
                 if(!tipoProducto){
-                    setGuitars(objetoGuitarras)
+                    setGuitars(respuesta)
                 }else{
-                    const nuevosProductos = objetoGuitarras.filter(item=> item.categoria === tipoProducto);
-                    // console.log('nuevaLista',nuevaLista)
-                    setGuitars(nuevosProductos)
+                    const nuevasGuitarras = respuesta.filter( nuevaGuitarra => nuevaGuitarra.categoria === tipoProducto )
+                    setGuitars(nuevasGuitarras)
                 }
-            } catch (error) {
-                console.log('No cargan los datos. ', error)
-            }
-        }
-        asincronaDeDatos()
+            })
     }, [tipoProducto]);
 
     return (

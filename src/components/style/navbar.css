@@ -58,5 +58,8 @@ body{
     padding: 1px 3px; 
     text-align: center;
 }
+#barra-navegacion .claseActive{
+    color: #f6e696
+}
 
 

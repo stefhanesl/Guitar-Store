@@ -3,26 +3,33 @@ import {guitarras} from './../Datos/datos'
 import { getItem } from '../CustomHooks/useFetch';
 import { useState, useEffect } from 'react';
 
-const ItemDetailContainer = () => {
+import { useParams } from 'react-router-dom';
 
-    const [products, setProducts] = useState({});
+const ItemDetailContainer = () => {
+    const { identificador } = useParams()
+
+    const [product, setProduct] = useState({});
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         getItem(guitarras)
         .then( respuesta => {
-            setProducts(respuesta.find(producto => producto.id === '1275425410278'))
+            const nuevaGuitarra = respuesta.find( guita => guita.id === identificador )
+            setProduct(nuevaGuitarra)
             setLoading(false)
-        }, [])
+        })
         .catch( error => `No se pueden acceder al producto: ${error}`)
-    }, []);
+    }, [identificador]);
 
     return (
         <div>    
         {
             loading 
-            ? <h2>Cargando...</h2> 
-            : <ItemDetail guitarra={products}/>
+            ?   <h2>Cargando...</h2> 
+            :   <div key={parseInt(product.id)} className='guitar-card' >
+                    <ItemDetail guitarra={product}/>
+                </div>
+             
         }
         </div>
     );
