@@ -1,11 +1,30 @@
-# Getting Started with Create React App
+# Información General
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto es sobre una tienda de guitarras, donde hay un catalogo de productos de una tienda de música con sus respetivos detalles de los instrumentos y de los accesorios.
+
+## **Objetivo:** 
+El proposito de este proyecto es aplicar conceptos como: la creación de componentes, pasar datos a traves de propiedades a componentes hijos, pasarle eventos al componente padre, aplicar navegación dinamica, entre otros conceptos.
+
+## Tecnologias usadas
+<ul>
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>JavaScript</li>
+  <li>React JS</li>
+</ul>
+
+## Dependencias
+<ul>
+  <li>react-bootstrap: se utilizo en creación del NavBar</li>
+  <li>react-router-dom: se utilizo para darle una navegación dinamica a la pagina</li>
+  <li>react-icons: se uso para importar el iconos</li>
+</ul>
+
+
 
 ## Available Scripts
 
 In the project directory, you can run:
-
 ### `npm start`
 
 Runs the app in the development mode.\
