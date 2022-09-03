@@ -17,7 +17,7 @@ El proposito de este proyecto es aplicar conceptos como: la creación de compone
 <ul>
   <li>react-bootstrap: se utilizo en creación del NavBar</li>
   <li>react-router-dom: se utilizo para darle una navegación dinamica a la pagina</li>
-  <li>react-icons: se uso para importar el iconos</li>
+  <li>react-icons: se uso para importar el icono del carrito</li>
 </ul>
 
 
