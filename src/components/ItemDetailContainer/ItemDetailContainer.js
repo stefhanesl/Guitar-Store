@@ -2,7 +2,7 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 import {guitarras} from './../Datos/datos'
 import { getItem } from '../CustomHooks/useFetch';
 import { useState, useEffect } from 'react';
-
+import './../style/spinner.css'
 import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = ({agregarAlCarrito}) => {
@@ -25,7 +25,7 @@ const ItemDetailContainer = ({agregarAlCarrito}) => {
         <div>    
         {
             loading 
-            ?   <h2>Cargando...</h2> 
+            ?   <div class="spinner"></div>
             :   <div key={parseInt(product.id)} className='guitar-card' >
                     <ItemDetail guitarra={product} agregarAlCarrito={agregarAlCarrito}/>
                 </div>

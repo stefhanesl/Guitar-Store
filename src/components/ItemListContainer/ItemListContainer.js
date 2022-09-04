@@ -9,25 +9,31 @@ export const ItemListContainer = () => {
     const {tipoProducto} = useParams();
 
     const [guitars, setGuitars] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         getItem(guitarras).then( respuesta => {
                 if(!tipoProducto){
                     setGuitars(respuesta)
+                    setLoading(false)
                 }else{
                     const nuevasGuitarras = respuesta.filter( nuevaGuitarra => nuevaGuitarra.categoria === tipoProducto )
                     setGuitars(nuevasGuitarras)
+                    setLoading(false)
                 }
             })
     }, [tipoProducto]);
 
     return (
-        <>
+        <div className='contenedor-general-productos'>
             <CarrouselImage />
-            <div className='container-guitars' id='fondo'>
-                <ItemList guitars={guitars}/>
-            </div>
-        </>
+            { loading 
+                ? <div class="spinner"></div> 
+                :   <div className='container-guitars' id='fondo'>
+                        <ItemList guitars={guitars}/>
+                    </div>
+            }
+        </div>
     );
 }
 

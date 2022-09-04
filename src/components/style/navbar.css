@@ -45,7 +45,7 @@ body{
 }
 #carrito #car{
     position: absolute;
-    font-size: 30px;
+    font-size: 100px;
     margin: 0 auto;
     align-items: flex-end;
 }
@@ -55,11 +55,14 @@ body{
     color: #212121;
     background-color: #fff;
     border-radius: 100%;
-    padding: 1px 3px; 
+    padding: 3px 10px;
     text-align: center;
 }
 #barra-navegacion .claseActive{
     color: #f6e696
 }
 
-
+pie-pagina{
+    display: grid;
+    grid-column: repeat(3, 1fr);
+}

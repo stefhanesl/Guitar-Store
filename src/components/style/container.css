@@ -6,29 +6,59 @@
     text-decoration: none;
     
 }
-/* --------------------------- ITEM LIST CONTAINER -------------------------------- */
+
 body{
     background-color: rgb(24, 22, 22);
 }
+/* --------------------------- ITEM LIST CONTAINER -------------------------------- */
+/* Carousel */
+.carousel .carousel-inner{
+    display: flex;
+}
+.carousel-item{
+    position: relative;
+    height: 350px;
+    width: 900px;
+    margin: 0 auto;
+    
+}
+
+.carousel-item img{
+    padding-top: 30px;
+    position: absolute;
+    height: 90%;
+    border-radius: 20px;
+}
+
 .container-guitars{
     max-width: 90%;
     overflow-x: hidden;
-    background-color: rgb(243, 243, 252);
     margin:auto;
-    
 }
-#fondo{
-    background: url('./../../../public/assets/img/fondo.jpg');
-    height: 100%;
-    max-width: 100vw;
-    background-blend-mode: soft-light;
-    overflow: visible;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
+
+.contenedor-general-productos{
+    display: block;
+    position: relative;
+}
+.contenedor-general-productos::after{
+    content: "";
+    background-image: url('./../../../public/assets/img/fondo-store.jpg');
+    /* height: 100%; */
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1; 
+    /* overflow: visible; */
+    /* background-position: center center; */
+    background-repeat: repeat;
+
+    /* background-attachment: fixed; */
+    /* -webkit-background-size: cover;
+    -moz-background-size: cover; */
+    /* background-size: cover; */
 }
 /* --------------------------- ITEM LIST -------------------------------- */
 
@@ -261,3 +291,46 @@ body{
 .item-detail-image img{
     margin: 25% 25%;
 }
+
+/* --------------------------- PIE PAGINA -------------------------------- */
+.App #pie-pagina{
+    margin: 0 auto;
+}
+#pie-pagina{
+    width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 50px;
+    margin-top: 30px;
+    padding: 20px;
+}
+.pie-pagina-listado{
+    width: 200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-transform: uppercase;
+}
+.pie-pagina-listado h4{
+    font-weight: 600;
+}
+.pie-pagina-listado ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.pie-pagina-listado .redes{
+    display: flex;
+    flex-direction: row;
+    font-style: italic;
+    gap: 20px;
+    padding: 0 10px;
+}
+
+.pie-pagina-listado ul li{
+    align-self: flex-start;
+    
+}
+

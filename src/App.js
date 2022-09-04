@@ -9,6 +9,7 @@ import Nosotros from './components/Nosotros/Nosotros';
 import PaginaError from './components/PaginaError/PaginaError';
 import { useState, useEffect } from 'react';
 import Cart from './components/Cart/Cart';
+import PiePagina from './components/PiePagina/PiePagina';
 
 
 function App() {
@@ -41,7 +42,7 @@ function App() {
               
           </Routes>
         </div>
-        
+        <PiePagina />
       </div>
     </Router>
   );

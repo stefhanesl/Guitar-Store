@@ -7,7 +7,7 @@ export const CartWidget = ({agregarValorCarrito}) => {
     return (
         <IconContext.Provider value={{ color: "white", size:"1.6rem"}} >
             <span id='cantidad-carrito'>{agregarValorCarrito}</span>
-            <MdShoppingCart  id='car'/>
+            <MdShoppingCart  style={{width:'50px'}} id='car'/>
         </IconContext.Provider>
     );
 }
