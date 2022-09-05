@@ -8,7 +8,7 @@ const CarrouselImage = () => {
                 <Carousel.Item>
                     <img
                     className="d-block w-100"
-                    src="./assets/carrousel-image1.webp"
+                    src="/assets/carrousel-image1.webp"
                     alt="First slide"
                     />
                     <Carousel.Caption>
@@ -19,7 +19,7 @@ const CarrouselImage = () => {
                 <Carousel.Item>
                     <img
                     className="d-block w-100"
-                    src="./assets/carrousel-image2.webp"
+                    src="/assets/carrousel-image2.webp"
                     alt="Second slide"
                     />
 
@@ -31,7 +31,7 @@ const CarrouselImage = () => {
                 <Carousel.Item>
                     <img
                     className="d-block w-100"
-                    src="./assets/carrousel-image3.jpg"
+                    src="/assets/carrousel-image3.jpg"
                     alt="Third slide"
                     />
 

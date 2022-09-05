@@ -39,7 +39,7 @@ function App() {
               <Route path='/contacto' element={<Contacto />} />
               <Route path='*' element={<PaginaError />} />
               <Route path='/cart' element={<Cart />} />
-              
+
           </Routes>
         </div>
         <PiePagina />

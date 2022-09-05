@@ -3,15 +3,15 @@ import React from 'react';
 const BarraNavegacion = () => {
     return (
         <div className='responsive-header global-header'>
-            <div class="responsive-header_branding">
+            <div className="responsive-header_branding">
 
             </div>
             <div className='response-header_utility'>
                 <div className='responsive-header_utility_mobile'>
                     <a href='/#' aria-label='Hamburger Menu' role='presentation'></a>
-                    <a href='/#' class='toggle-search' aria-label='Search' role='presentation'></a>
+                    <a href='/#' className='toggle-search' aria-label='Search' role='presentation'></a>
                 </div>
-                <a href='/#' class='logo-store'></a>
+                <a href='/#' className='logo-store'></a>
                 <div className='responsive-header_utility_search' role='search' aria-label='Que podemos ayudarte a busca?'></div>
                 <a href='/#' className='responsive-header_utility_help'></a>
                 <span className='responsive-header_utility_signin'>
@@ -41,7 +41,7 @@ const BarraNavegacion = () => {
 
             </div> 
             <div className='responsive-header_browse' aria-label='Main'>
-                <div class="responsive-header_browse_header">
+                <div className="responsive-header_browse_header">
                     <div className='responsive-header_browse_categorymenu -collapsible'>
                         
                     </div>

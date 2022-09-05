@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ItemList from '../ItemList/ItemList';
 import { guitarras } from '../Datos/datos';
-import { getItem } from '../CustomHooks/useFetch';
+import { getProducts } from '../CustomHooks/useFetch';
 import { useParams } from "react-router-dom";
 import CarrouselImage from '../CarrouselImage/CarrouselImage';
 
@@ -12,7 +12,7 @@ export const ItemListContainer = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        getItem(guitarras).then( respuesta => {
+        getProducts(guitarras).then( respuesta => {
                 if(!tipoProducto){
                     setGuitars(respuesta)
                     setLoading(false)
@@ -28,7 +28,7 @@ export const ItemListContainer = () => {
         <div className='contenedor-general-productos'>
             <CarrouselImage />
             { loading 
-                ? <div class="spinner"></div> 
+                ? <div className="spinner"></div> 
                 :   <div className='container-guitars' id='fondo'>
                         <ItemList guitars={guitars}/>
                     </div>

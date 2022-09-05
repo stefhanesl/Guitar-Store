@@ -13,6 +13,9 @@ body{
     padding: 0;
     margin: 0;
 }
+.link-nav{
+    text-decoration: none;
+}
 .navbar>.container{
     justify-content: center;
 }
@@ -61,7 +64,9 @@ body{
 #barra-navegacion .claseActive{
     color: #f6e696
 }
-
+.cart-container{
+    padding: 100px 0;
+}
 pie-pagina{
     display: grid;
     grid-column: repeat(3, 1fr);

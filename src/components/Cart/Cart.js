@@ -1,10 +1,11 @@
 import React from 'react';
+import './../style/navbar.css'
 
 const Cart = () => {
     return (
-        <div>
-            <h1>La lista de compras es:</h1>
-
+        <div className='cart-container'>
+            <h1>Carrito de compras</h1>
+            <p>Su lista de compras es</p>    
         </div>
     );
 }

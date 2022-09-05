@@ -28,7 +28,7 @@ const Item = ({guitar}) => {
                     <h4 className='guitar-tarjeta-title'>{name}</h4>                    
                     <h5 className='guitar-tarjeta-price'>Desde: <span>${price}</span></h5>
                     <h6 className='guitar-tarjeta-price-before'>Antes: <span>${(price*1.1).toFixed(2)}</span></h6>
-                    <div className='guitar-tarjeta-info-card'><span>Compra hasta 6 cuotas sin interés</span><img src='assets/img/formaspagoLogos.png' width='200px' alt='logo-formas-pago'/></div>
+                    <div className='guitar-tarjeta-info-card'><span>Compra hasta 6 cuotas sin interés</span><img src='/assets/img/formaspagoLogos.png' width='200px' alt='logo-formas-pago'/></div>
                     <div className='guitar-tarjeta-stars'>
                     {calification} <ul className='guitar-tarjeta-stars-lista'>
                             <li><span id='star-guitar'>⭐</span></li>

@@ -5,9 +5,9 @@ export const guitarras = [
         id: '1275420278',
         calification: 4.5,
         images: {
-            img1: './assets/img/guitar3/guitar3.jpg',
-            img2: './assets/img/guitar3/guitar3_1.jpg',
-            img3: './assets/img/guitar3/guitar3_2.webp'
+            img1: '/assets/img/guitar3/guitar3.jpg',
+            img2: '/assets/img/guitar3/guitar3_1.jpg',
+            img3: '/assets/img/guitar3/guitar3_2.webp'
         },
         price: 129.99,
         discount: '0%',
@@ -24,9 +24,9 @@ export const guitarras = [
         id: '1274115033',
         calification: 4.2,
         images: {
-            img1:'./assets/img/guitar1/guitar1.webp',
-            img2: './assets/img/guitar1/guitar1_2.jpg',
-            img3: './assets/img/guitar1/guitar1_1.webp'
+            img1:'/assets/img/guitar1/guitar1.webp',
+            img2: '/assets/img/guitar1/guitar1_2.jpg',
+            img3: '/assets/img/guitar1/guitar1_1.webp'
         },
         price: 139.99,
         discount: '16%',
@@ -43,9 +43,9 @@ export const guitarras = [
         id: '1115033905',
         calification: 4.5,
         images: {
-            img1: './assets/img/guitar2/guitar2.webp',
-            img2: './assets/img/guitar2/guitar2_2.webp',
-            img3: './assets/img/guitar2/guitar2_1.jpg'
+            img1: '/assets/img/guitar2/guitar2.webp',
+            img2: '/assets/img/guitar2/guitar2_2.webp',
+            img3: '/assets/img/guitar2/guitar2_1.jpg'
         },
         price: 159.99,
         discount: '12%',
@@ -62,9 +62,9 @@ export const guitarras = [
         id: '1500048932',
         calification: 4,
         images: {
-            img1: './assets/img/guitar4/guitar4.webp',
-            img2: './assets/img/guitar4/guitar4_1.jpg',
-            img3: './assets/img/guitar4/guitar4_2.jpg'
+            img1: '/assets/img/guitar4/guitar4.webp',
+            img2: '/assets/img/guitar4/guitar4_1.jpg',
+            img3: '/assets/img/guitar4/guitar4_2.jpg'
         },
         price: 179.99,
         discount: '28%',
@@ -81,8 +81,8 @@ export const guitarras = [
         id: '10040003300',
         calification: 4.3,
         images: {
-            img1: './assets/img/microfono1/microfono1.jpg',
-            img2: './assets/img/microfono1/microfono1_2.webp'
+            img1: '/assets/img/microfono1/microfono1.jpg',
+            img2: '/assets/img/microfono1/microfono1_2.webp'
         },
         price: 175.99,
         discount: '0%',
@@ -99,8 +99,8 @@ export const guitarras = [
         id: '17355397327',
         calification: 4.7,
         images: {
-            img1: './assets/img/microfono2/microfono2_2.jpg',
-            img2: './assets/img/microfono2/microfono2.jpg'
+            img1: '/assets/img/microfono2/microfono2_2.jpg',
+            img2: '/assets/img/microfono2/microfono2.jpg'
         },
         price: 182.25,
         discount: '5%',
@@ -117,7 +117,7 @@ export const guitarras = [
         id: '4789436622',
         calification: 4.9,
         images: {
-            img1: './assets/img/accesorio2/accesorio2.jpg',
+            img1: '/assets/img/accesorio2/accesorio2.jpg',
         },
         price: 319.14,
         discount: '10%',
@@ -134,9 +134,9 @@ export const guitarras = [
         id: '4789111922',
         calification: 4.5,
         images: {
-            img1: './assets/img/accesorio3/accesorio3.webp',
-            img2: './assets/img/accesorio3/accesorio3_2.jpg',
-            img3: './assets/img/accesorio3/accesorio3_3.webp'
+            img1: '/assets/img/accesorio3/accesorio3.webp',
+            img2: '/assets/img/accesorio3/accesorio3_2.jpg',
+            img3: '/assets/img/accesorio3/accesorio3_3.webp'
         },
         price: 319.14,
         discount: '15%',
@@ -153,8 +153,8 @@ export const guitarras = [
         id: '47833922',
         calification: 4.9,
         images: {
-            img1: './assets/img/accesorio1/accesorio1.webp',
-            img2: './assets/img/accesorio1/accesorio1_2.webp'
+            img1: '/assets/img/accesorio1/accesorio1.webp',
+            img2: '/assets/img/accesorio1/accesorio1_2.webp'
         },
         price: 21.25,
         discount: '0%',

@@ -1,6 +1,6 @@
 import ItemDetail from '../ItemDetail/ItemDetail';
 import {guitarras} from './../Datos/datos'
-import { getItem } from '../CustomHooks/useFetch';
+import { getProducts } from '../CustomHooks/useFetch';
 import { useState, useEffect } from 'react';
 import './../style/spinner.css'
 import { useParams } from 'react-router-dom';
@@ -12,7 +12,7 @@ const ItemDetailContainer = ({agregarAlCarrito}) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        getItem(guitarras)
+        getProducts(guitarras)
         .then( respuesta => {
             const nuevaGuitarra = respuesta.find( guita => guita.id === identificador )
             setProduct(nuevaGuitarra)
@@ -25,7 +25,7 @@ const ItemDetailContainer = ({agregarAlCarrito}) => {
         <div>    
         {
             loading 
-            ?   <div class="spinner"></div>
+            ?   <div className="spinner"></div>
             :   <div key={parseInt(product.id)} className='guitar-card' >
                     <ItemDetail guitarra={product} agregarAlCarrito={agregarAlCarrito}/>
                 </div>

@@ -37,7 +37,7 @@ const ItemCount = ({stock, agregarAlCarrito}) => {
                         >Agregar al carrito</button>
 
             </div> 
-            <div class="tarjeta-inferior" to='/cart'>
+            <div className="tarjeta-inferior" to='/cart'>
                 <Link to='/cart' style={{ textDecoration: 'none' }}>
                     <button id='terminar-compra'
                                 onClick={() => agregarAlCarrito(cantidad)}

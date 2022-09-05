@@ -13,8 +13,7 @@ const NavBar = ({agregarValorCarrito}) => {
         <>
             <Navbar id="barra-navegacion"  variant="light">
                 
-                <Link  className={({isActive})=>isActive ? "claseActive": "claseInactive"}
-                         to="/"   >
+                <Link  to="/" className='link-nav'>
                         <img
                                 alt=""
                                 src='assets/img/logo-guitar.png'
@@ -41,7 +40,7 @@ const NavBar = ({agregarValorCarrito}) => {
                         <NavLink 
                             className={({isActive})=>isActive ? "claseActive": "claseInactive"}
                             to="/category/microfono">
-                            Microfonos
+                            Micrófonos
                         </NavLink>
                         <NavLink 
                             className={({isActive})=>isActive ? "claseActive": "claseInactive"}
@@ -61,9 +60,11 @@ const NavBar = ({agregarValorCarrito}) => {
                     </Nav>
                     
                 </Container>
-                <div id='carrito'>
-                    <CartWidget agregarValorCarrito={agregarValorCarrito}/>
-                </div>
+                <Link to='/cart' className='link-nav'>
+                    <div id='carrito'>
+                        <CartWidget agregarValorCarrito={agregarValorCarrito}/>
+                    </div>
+                </Link>
             </Navbar>
         </>
     );
