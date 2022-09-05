@@ -1,18 +1,17 @@
 import React from 'react';
 import { useState } from 'react';
-import { NavLink } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const ItemCount = ({stock, agregarAlCarrito}) => {
 
     const [cantidad, setCantidad] = useState(0);
 
-    const aumentar = () => {
+    const onAdd = () => {
         if(cantidad<stock){
             setCantidad(cantidad+1)
         }
     }
-    const decrementar = () => {
+    const OnLess = () => {
         if(cantidad>0){
             setCantidad(cantidad-1)
         }    
@@ -22,13 +21,9 @@ const ItemCount = ({stock, agregarAlCarrito}) => {
     return (
         <div className='agregar-guitars'>
             <div id='pantalla'>
-                <button className='contar' onClick={() => decrementar()}>-</button>
+                <button className='contar' onClick={() => OnLess()}>-</button>
                 <div className='contar' id='cantidad'>{cantidad}</div>
-                <button 
-                    className='contar' 
-                    onClick={() => aumentar()}
-                    
-                    >+</button>
+                <button className='contar' onClick={() => onAdd()}>+</button>
             </div>
             <div className='tarjeta-inferior'>
                         <button id='agregar'
