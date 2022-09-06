@@ -1,11 +1,42 @@
 # Información General
 
-Este proyecto es sobre una tienda de guitarras, donde hay un catalogo de productos de una tienda de música con sus respetivos detalles de los instrumentos y de los accesorios.
+Este proyecto es sobre una tienda de guitarras, donde hay un catálogo de productos de una tienda de música con sus respetivos detalles de los instrumentos y de los accesorios. En el catálogo se cuenta con tres categorías: guitarras, micrófonos, accesorios. En el detalle del producto se pueden observar las caracteristicas del mismo y unos botones para agregar la cantidad, agregar al carrito y terminar la compra. Cada uno de los elementos de la barra de navegación redirige a un nuevo link, y los del catálogo nos ayudan a filtrar los productos.
 
 ## **Objetivo:** 
 El proposito de este proyecto es aplicar conceptos como: la creación de componentes, pasar datos a traves de propiedades a componentes hijos, pasarle eventos al componente padre, aplicar navegación dinamica, entre otros conceptos.
+<br>
 
-## Tecnologias usadas
+
+## Visualización del proyecto:
+<Image>
+<div style='display:grid'>
+  <p style = 'text-align:center; margin-bottom:'100px'>
+  <p><img align="right" alt="gift oriyecto" src="https://media.giphy.com/media/XhNyUhcHAEA5JFJfTG/giphy.gif" width="400" height="200" /></p>
+  <p style = 'text-align:left'><img align="left" alt="gift oriyecto" src="https://media.giphy.com/media/oVzNKAljBPTqy1ll0m/giphy.gif" width="400" height="200" /></p>
+ </p>
+</div>
+</Image>
+
+"
+
+
+
+
+
+"
+" 
+
+
+
+
+
+"
+
+"
+
+
+"
+### Tecnologias usadas
 <ul>
   <li>HTML</li>
   <li>CSS</li>
