@@ -8,7 +8,7 @@ import Contacto from './components/Contacto/Contacto';
 import Nosotros from './components/Nosotros/Nosotros';
 import PaginaError from './components/PaginaError/PaginaError';
 import { useState, useEffect } from 'react';
-import CartPagina from './components/CartPagina/CartPagina';
+import Cart from './components/Cart/Cart';
 import PiePagina from './components/PiePagina/PiePagina';
 import { CartComponentContext } from './context/CartContext/CartContext';
 
@@ -39,7 +39,7 @@ function App() {
                 <Route path='/nosotros' element={<Nosotros />} />
                 <Route path='/contacto' element={<Contacto />} />
                 <Route path='*' element={<PaginaError />} />
-                <Route path='/cart' element={<CartPagina />} />
+                <Route path='/cart' element={<Cart />} />
             </Routes>
           </div>
           <PiePagina />

@@ -1,33 +1,51 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect} from "react";
 export const CartContext = createContext();
 
 export const CartComponentContext = ({children}) => {
 
-    /* addItem(item, quantity) // agregar cierta cantidad de un ítem al carrito
-    removeItem(itemId) // Remover un item del cart por usando su id
-    clear() // Remover todos los items
-    isInCart: (id) => true|false
-    */
     const [listaProductosCarrito, setListaProductosCarrito] = useState([]);
+    const [total, setTotal] = useState(0)
 
-   const addItem = (objeto, cantidad) => {
-    const nuevoProducto = {...objeto, cantidad}
-    const nuevaListaProductos = [...listaProductosCarrito, nuevoProducto]
-    setListaProductosCarrito(nuevaListaProductos)
-   }
+    const addItem = (objeto, cantidad) => {
+        const isInCart = listaProductosCarrito.some( producto => producto.id === objeto.id )
+        const nuevoProducto = {...objeto, cantidad}
+        if(isInCart){
+            const productoEstaDuplicado = listaProductosCarrito.map( producto => {
+                if( producto.id === objeto.id ){
+                    producto.cantidad += cantidad;
+                    return producto;
+                }
+                return producto;
+            })
+            const nuevaListaProductos = [...productoEstaDuplicado]
+            setListaProductosCarrito(nuevaListaProductos)
+            
+        }else{
+            const listaProductos = [...listaProductosCarrito, nuevoProducto]
+            setListaProductosCarrito(listaProductos)
+
+        }
+    }
+
    const removeItem = (itemId) => {
-    listaProductosCarrito = listaProductosCarrito.filter( elemento => elemento.id !== itemId)
-   }
-   const clear = () => {
-    listaProductosCarrito = []
-   }
-   
-   
+        const nuevaLista = listaProductosCarrito.filter( elemento => elemento.id !== itemId)
+        setListaProductosCarrito(nuevaLista)
+    }
 
-   console.log(listaProductosCarrito)
+   const clear = () => {
+        setListaProductosCarrito([])
+   }
+
+   const totalArticulos = () => {
+     const valoresTotales = listaProductosCarrito.reduce( (total, producto) => total + producto.cantidad, 0)
+     setTotal(valoresTotales)
+   }
+   useEffect(() => {
+    totalArticulos();
+   }, [listaProductosCarrito]);
 
     return(
-        <CartContext.Provider value={{addItem, removeItem, clear}}>
+        <CartContext.Provider value={{addItem, removeItem, clear, listaProductosCarrito, total}}>
             {children}
         </CartContext.Provider>
     )
