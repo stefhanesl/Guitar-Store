@@ -1,7 +1,7 @@
 import React from 'react';
 import './../style/navbar.css'
 
-const Cart = () => {
+const CartPagina = () => {
     return (
         <div className='cart-container'>
             <h1>Carrito de compras</h1>
@@ -10,4 +10,4 @@ const Cart = () => {
     );
 }
 
-export default Cart;
+export default CartPagina;

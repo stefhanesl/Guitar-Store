@@ -8,9 +8,9 @@ import Contacto from './components/Contacto/Contacto';
 import Nosotros from './components/Nosotros/Nosotros';
 import PaginaError from './components/PaginaError/PaginaError';
 import { useState, useEffect } from 'react';
-import Cart from './components/Cart/Cart';
+import CartPagina from './components/CartPagina/CartPagina';
 import PiePagina from './components/PiePagina/PiePagina';
-
+import { CartComponentContext } from './context/CartContext/CartContext';
 
 function App() {
 
@@ -26,25 +26,26 @@ function App() {
   }, [valor]);
 
   return (
-    <Router>
-      <div className="App">
-        <div>
-          <NavBar agregarValorCarrito={agregarValorCarrito}/> 
-            <Routes>
-              <Route path='/'  element={<ItemListContainer/>} />
-              <Route path='/category'  element={<ItemListContainer/>} />
-              <Route path='/category/:tipoProducto'  element={<ItemListContainer/>} />
-              <Route path='/item/:identificador'  element={<ItemDetailContainer agregarAlCarrito={agregarAlCarrito}/>} />
-              <Route path='/nosotros' element={<Nosotros />} />
-              <Route path='/contacto' element={<Contacto />} />
-              <Route path='*' element={<PaginaError />} />
-              <Route path='/cart' element={<Cart />} />
-
-          </Routes>
+    <CartComponentContext>
+      <Router>
+        <div className="App">
+          <div>
+            <NavBar agregarValorCarrito={agregarValorCarrito}/> 
+              <Routes>
+                <Route path='/'  element={<ItemListContainer/>} />
+                <Route path='/category'  element={<ItemListContainer/>} />
+                <Route path='/category/:tipoProducto'  element={<ItemListContainer/>} />
+                <Route path='/item/:identificador'  element={<ItemDetailContainer agregarAlCarrito={agregarAlCarrito}/>} />
+                <Route path='/nosotros' element={<Nosotros />} />
+                <Route path='/contacto' element={<Contacto />} />
+                <Route path='*' element={<PaginaError />} />
+                <Route path='/cart' element={<CartPagina />} />
+            </Routes>
+          </div>
+          <PiePagina />
         </div>
-        <PiePagina />
-      </div>
-    </Router>
+      </Router>
+      </CartComponentContext>
   );
 }
 

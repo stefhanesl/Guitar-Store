@@ -27,11 +27,11 @@ body{
     padding-top: 30px;
     position: absolute;
     height: 90%;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 .container-guitars{
-    max-width: 90%;
+    max-width: 98%;
     overflow-x: hidden;
     margin:auto;
 }
@@ -64,17 +64,37 @@ body{
 
 .guitars-grid{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 30px ;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
     padding: 2em 1em;
     box-sizing: border-box;
 }
-@media screen and (max-width: 1200px){
+/* ---------------000000000000000000---------------- */
+/* @media only screen and (max-width: 400px){
     .guitars-grid {
-    grid-template-columns: repeat(2,1fr);
+        grid-template-rows: 1fr;
+    }
+    .guitar-card{
+        width: 4rem;
     }
 }
+@media screen and (min-width: 420px) and (max-width: 749px){
+    .guitars-grid {
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 0px;
+    }
+    .guitar-card{
+        max-width: 200px;
+    }
+}
+@media screen and (min-width: 750px) and (max-width: 1200px){
+    .guitars-grid {
+    grid-template-columns: repeat(3,1fr);
+    }
+} */
+/* ----------------000000000000000000000--------------- */
 .guitar-card{
+    width: 300px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -87,21 +107,18 @@ body{
 /* --------------------------- ITEM -------------------------------- */
 .guitar-tarjeta{
     position: relative;
-    width: 400px;
-    min-height: 100%;
     background-color: rgb(24, 22, 22);
     overflow: hidden;
     box-sizing: border-box;
-    margin: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-
 }
 .guitar-tarjeta .card-body{
     background-color: rgb(24, 22, 22);
+
 }
 .guitar-tarjeta-descuento{
     width: 100%;
@@ -112,15 +129,18 @@ body{
 }
 .descuento-red{
     width: 100%;
+    font-size: 15px;
     background-color: red;
     padding: 2px 10px;
 }
 .descuento-green{
     position: absolute;
     background-color: green;
-    padding: 20px 10px ;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 20px 2px ;
     border-radius: 100%;
-    right: 60px;
+    right: 5px;
     top: 5px;
 }
 .guitar-tarjeta .guitar-img-container{
@@ -130,7 +150,7 @@ body{
 }
 .guitar-img-container img{
     
-    width: 150px;
+    width: 130px;
     margin: 0 auto;
     background-size: cover;
     background-position: center;
@@ -141,38 +161,45 @@ body{
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    padding-left: 20px;
-    gap: 5px; 
+    gap: 2px; 
+    padding: 5px 5px 0 5px;
 }
 .card-body .guitar-tarjeta-title{
-    min-height: 80px;
+    font-size: 13px;
     text-transform: uppercase;
     box-sizing: border-box;
     text-align: center;
 }
-.card-body .guitar-tarjeta-info-card{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+
+.card-body .guitar-tarjeta-price{
+    font-size: 18px;
+    margin-left: 10px;
 }
+
 .card-body .guitar-tarjeta-price-before{
     text-decoration: line-through;
+    font-size: 12px;
+    margin-left: 10px;
+}
+.card-body .guitar-tarjeta-info-card{
+    display: flex;
+    margin-left: 10px;
+    gap: 10px;
 }
 .card-body .guitar-tarjeta-info-card span{
     font-size: 10px;
     background-color: rgb(66, 122, 218);
     padding: 1px 5px;
     border-radius: 10px;
-   
-
+    align-self: center;
 }
 .card-body .guitar-tarjeta-info-card img{
-    padding: 1px 20px;
+    width: 50px;
 }
 .guitar-tarjeta-stars{
     display: flex;
     gap: 5px;
+    margin-left: 10px;
 }
 .guitar-tarjeta-stars-lista{
     display: flex;
@@ -180,13 +207,14 @@ body{
     padding-left: 0;
 }
 .btn-visualizar-infomacion{
+    font-size: 12px;
     min-width: 100%;
     max-height: 30px;
     box-sizing: border-box;
     margin-bottom: 10px;
-
 }
 .btn-information{
+   
     color: black;
     padding: 4px 25px;
     border: none;

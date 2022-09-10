@@ -31,8 +31,11 @@ const ItemCount = ({stock, agregarAlCarrito}) => {
             </div>
             <div className='tarjeta-inferior'>
                         <button id='agregar'
-                        onClick={() => mostrarBtn()}
-                        // disabled={cantidad < 1 ? true : false}
+                        onClick={() => {
+                            mostrarBtn();
+                            agregarAlCarrito(cantidad);
+                        }}
+                        disabled={cantidad < 1 ? true : false}
                         >Agregar al carrito</button>
 
             </div> 

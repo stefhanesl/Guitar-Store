@@ -48,7 +48,7 @@ export const guitarras = [
             img3: '/assets/img/guitar2/guitar2_1.jpg'
         },
         price: 159.99,
-        discount: '12%',
+        discount: '0%',
         features: {
             feature1: 'Body Style: Dreadnought',
             feature2: 'Top: Laminated spruce',
@@ -85,7 +85,7 @@ export const guitarras = [
             img2: '/assets/img/microfono1/microfono1_2.webp'
         },
         price: 175.99,
-        discount: '0%',
+        discount: '10%',
         features: {
             feature1: 'Excellent microphone for all types of vocalists',
             feature2: 'Detailed sound that highlights subtle nuances',
@@ -139,7 +139,7 @@ export const guitarras = [
             img3: '/assets/img/accesorio3/accesorio3_3.webp'
         },
         price: 319.14,
-        discount: '15%',
+        discount: '0%',
         features: {
             feature1: 'Patented Gliding Laptop Platform',
             feature2: 'Removable V-cut Front Access Panel',

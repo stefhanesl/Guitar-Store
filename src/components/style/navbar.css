@@ -17,7 +17,9 @@ body{
     text-decoration: none;
 }
 .navbar>.container{
+    font-size: 12px;  
     justify-content: center;
+    text-transform: uppercase;
 }
 .navbar-brand{
     padding: 0;
@@ -35,6 +37,7 @@ body{
 }
 #barra *{
     color: #fff;
+    text-decoration: none;
 }
 #carrito{
     position: relative;
@@ -62,7 +65,8 @@ body{
     text-align: center;
 }
 #barra-navegacion .claseActive{
-    color: #f6e696
+    color: #f6e696;
+    font-weight: 900;
 }
 .cart-container{
     padding: 100px 0;
