@@ -4,6 +4,7 @@ import { guitarras } from '../Datos/datos';
 import { getProducts } from '../CustomHooks/useFetch';
 import { useParams } from "react-router-dom";
 import CarrouselImage from '../CarrouselImage/CarrouselImage';
+import Spinner from '../spi/spinner';
 
 export const ItemListContainer = () => {
     const {tipoProducto} = useParams();
@@ -28,7 +29,7 @@ export const ItemListContainer = () => {
         <div className='contenedor-general-productos'>
             <CarrouselImage />
             { loading 
-                ? <div className="spinner"></div> 
+                ?   <Spinner />
                 :   <div className='container-guitars' id='fondo'>
                         <ItemList guitars={guitars}/>
                     </div>

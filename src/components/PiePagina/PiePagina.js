@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom'
 
 const PiePagina = () => {
   return (
-    <div id='pie-pagina'>
+    <footer id='pie-pagina'>
         <div className='pie-pagina-listado'>
             <h4>Categorías</h4>
             <ul>
@@ -53,7 +53,7 @@ const PiePagina = () => {
                 <li><AiFillGithub /></li>
             </ul>
         </div>
-    </div>
+    </footer>
   )
 }
 

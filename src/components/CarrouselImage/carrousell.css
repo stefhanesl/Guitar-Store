@@ -1,0 +1,24 @@
+.caption-carrousell{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+.title-carrousell{
+    background-color: rgb(241, 225, 225);
+    opacity: 0.7;
+    color: #000;
+    border-radius: 50%;
+    padding: 20px 40px;
+    font-weight: bolder;
+    
+}
+p{
+    color: rgb(252, 252, 252);
+    font-weight: bolder;
+    text-decoration: overline underline;
+    background-color: rgb(51, 70, 53);
+    opacity: 0.9;
+    width: 300px;
+    border-radius: 10px;
+}

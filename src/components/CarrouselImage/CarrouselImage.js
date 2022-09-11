@@ -1,5 +1,6 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
+import './carrousell.css'
 
 const CarrouselImage = () => {
     return (
@@ -11,9 +12,9 @@ const CarrouselImage = () => {
                     src="/assets/carrousel-image1.webp"
                     alt="First slide"
                     />
-                    <Carousel.Caption>
-                    <h3>First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <Carousel.Caption className='caption-carrousell'>
+                    <h3 className='title-carrousell'>Compra ahora - Paga 2023</h3>
+                    <p>Ordene en linea o en la tienda.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -23,22 +24,24 @@ const CarrouselImage = () => {
                     alt="Second slide"
                     />
 
-                    <Carousel.Caption>
-                    <h3>Second slide label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <Carousel.Caption className='caption-carrousell'>
+                    <h3 className='title-carrousell'>Financiamiento especial
+                        <br /> Hasta 48 meses
+                    </h3>
+                    <p>En marcas calificadas.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
                     className="d-block w-100"
-                    src="/assets/carrousel-image3.jpg"
+                    src="/assets/carrousel-image4.jpg"
                     alt="Third slide"
                     />
 
-                    <Carousel.Caption>
-                    <h3>Third slide label</h3>
+                    <Carousel.Caption className='caption-carrousell'>
+                    <h3 className='title-carrousell'>Accesorios imprescindibles</h3>
                     <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                        Asegurese de estar listo para jugar.
                     </p>
                     </Carousel.Caption>
                 </Carousel.Item>

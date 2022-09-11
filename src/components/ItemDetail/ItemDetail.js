@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext/CartContext';
 import ItemCount from '../ItemCount/ItemCount';
+import Table from 'react-bootstrap/esm/Table';
 
 const ItemDetail = ({guitarra}) => {
     const {addItem} = useContext(CartContext);
@@ -12,7 +13,7 @@ const ItemDetail = ({guitarra}) => {
     }
 
     return (
-        <>
+        <div className='item-detail-container-principal'>
             <div className='item-detail-container'>
                 <div className='item-detail-image'>
                     <img src={img1} alt='guitarra' width='200px'/>
@@ -20,13 +21,27 @@ const ItemDetail = ({guitarra}) => {
                 <div className='item-detail-description'>
                     <h1 className='item-detail-title'>{name}</h1>
                     <div className='item-detail-explanation'>
-                        <ul>
-                            <li>{feature1}</li>
-                            <li>{feature2}</li>
-                            <li>{feature3}</li>
-                        </ul>
+                        <div className='precios'>
+                            <div className='item-detail-price'>${price}</div> 
+                            <div className='item-detail-price-af'>${(price*1.1).toFixed(2)}</div>
+                        </div>
+                            <hr />
+                            <h6>Descripción</h6>
+                            <Table striped bordered hover variant="dark" className='tabla-cart'>
+                                <thead>
+                                    <tr>
+                                        <td>{feature1}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{feature2}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{feature3}</td>
+                                    </tr>
+                                </thead>
+                            </Table>
                     </div>
-                    <h4 className='item-detail-price'>${price}</h4>
+        
                     <div className='item-detail-box'>
                         <div className='item-detail-starts'>
                             <ul>
@@ -35,7 +50,7 @@ const ItemDetail = ({guitarra}) => {
                         </div>
                         <div className='item-detail-heart'>
                             <ul>
-                                <li>🤍 Favorito</li>
+                                <li><span className='like'>🤍</span> Favorito</li>
                             </ul>
                         </div>
                     </div>
@@ -43,7 +58,7 @@ const ItemDetail = ({guitarra}) => {
                 </div>
             </div>
 
-        </>
+        </div>
     );
 }
 

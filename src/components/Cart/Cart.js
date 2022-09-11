@@ -6,6 +6,8 @@ import CartView from '../CartView/CartView';
 import Table from 'react-bootstrap/esm/Table';
 import { MdCleaningServices } from 'react-icons/md';
 import { Link } from 'react-router-dom';
+import './cart.css'
+import { GiReturnArrow } from 'react-icons/gi'
 
 const CartPagina = () => {
 
@@ -13,9 +15,12 @@ const CartPagina = () => {
     
     return (
         <div className='cart-container'>
+            <div className='cart-container-img'>
+                <img class='img-main' />
+            </div>
             <h1>LISTA DE COMPRAS</h1>
 
-            <Table striped bordered hover variant="dark">
+            <Table striped bordered hover variant="dark" className='tabla-cart'>
                 <thead>
                     <tr>
                     <th>Nº</th>
@@ -35,15 +40,23 @@ const CartPagina = () => {
                             )
                         })}
                         </tbody>
-                    : <td colSpan={7}>
-                            <h2>No hay productos en el carrito.</h2>
-                            <Link to='/'>
-                                <button>Regresar a la tienda.</button>
-                            </Link>
-                    </td>
+                    : <>
+                        <tbody>
+                            <tr>
+                                <td colSpan={7}><h2>No hay productos en el carrito.</h2></td>
+                            </tr>
+                        </tbody>
+                    </>
                 }
             </Table>
-            <button onClick={()=> clear()} style={{background:'black'}}><MdCleaningServices size='40px'/>Vaciar Carrito</button>
+            <div className='btn-botones-cart'>
+                { listaProductosCarrito.length === 0 &&
+                    <Link to='/'>
+                            <button className='btn-regresar-catalogo'><GiReturnArrow  size='40px' className='btn-icono'/>Regresar a la tienda</button>
+                    </Link>
+                }
+                <button onClick={()=> clear()} className='btn-vaciar-carrito'><MdCleaningServices size='40px' className='btn-icono'/>Vaciar Carrito</button>
+            </div>
         </div>
     );
 }

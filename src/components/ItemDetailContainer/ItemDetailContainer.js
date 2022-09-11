@@ -2,8 +2,8 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 import {guitarras} from './../Datos/datos'
 import { getProducts } from '../CustomHooks/useFetch';
 import { useState, useEffect } from 'react';
-import './../style/spinner.css'
 import { useParams } from 'react-router-dom';
+import Spi from '../spi/spi';
 
 const ItemDetailContainer = ({agregarAlCarrito}) => {
     const { identificador } = useParams()
@@ -25,7 +25,7 @@ const ItemDetailContainer = ({agregarAlCarrito}) => {
         <div>    
         {
             loading 
-            ?   <div className="spinner"></div>
+            ?   <Spi />
             :   <div key={parseInt(product.id)} className='guitar-card' >
                     <ItemDetail guitarra={product} agregarAlCarrito={agregarAlCarrito}/>
                 </div>

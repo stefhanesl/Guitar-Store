@@ -9,9 +9,13 @@ body{
 }
 
 #barra-navegacion{
+    position: fixed;
+    width: 100%;
     background: rgb(26, 25, 24);
     padding: 0;
+    top: 0;
     margin: 0;
+    z-index: 10;
 }
 .link-nav{
     text-decoration: none;
@@ -65,13 +69,10 @@ body{
     text-align: center;
 }
 #barra-navegacion .claseActive{
-    color: #f6e696;
+    color: rgb(188, 188, 234);
     font-weight: 900;
 }
 .cart-container{
     padding: 100px 0;
 }
-pie-pagina{
-    display: grid;
-    grid-column: repeat(3, 1fr);
-}
+

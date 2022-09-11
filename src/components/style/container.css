@@ -6,9 +6,13 @@
     text-decoration: none;
     
 }
-
+html {
+    min-height: 100%;
+    position: relative;
+  }
 body{
     background-color: rgb(24, 22, 22);
+    margin-bottom: 150px;
 }
 /* --------------------------- ITEM LIST CONTAINER -------------------------------- */
 /* Carousel */
@@ -115,6 +119,10 @@ body{
     justify-content: center;
     align-items: center;
     border-radius: 20px;
+    box-shadow: 2px 2px 2px rgb(0, 0, 0);
+}
+.guitar-tarjeta:hover{
+    box-shadow: 3px 3px 2px rgb(62, 12, 65);
 }
 .guitar-tarjeta .card-body{
     background-color: rgb(24, 22, 22);
@@ -130,7 +138,7 @@ body{
 .descuento-red{
     width: 100%;
     font-size: 15px;
-    background-color: red;
+    background-color: rgb(134, 15, 177);
     padding: 2px 10px;
 }
 .descuento-green{
@@ -188,7 +196,7 @@ body{
 }
 .card-body .guitar-tarjeta-info-card span{
     font-size: 10px;
-    background-color: rgb(66, 122, 218);
+    background-color:rgb(134, 15, 177);
     padding: 1px 5px;
     border-radius: 10px;
     align-self: center;
@@ -213,13 +221,19 @@ body{
     box-sizing: border-box;
     margin-bottom: 10px;
 }
+
 .btn-information{
-   
     color: black;
     padding: 4px 25px;
     border: none;
     border-radius: 20px;
     margin-bottom: 20px;
+    box-shadow: 3px 3px 2px rgb(62, 12, 65);
+}
+.btn-information:hover{
+    background-color: rgb(17, 6, 21);
+    box-shadow: 2px 1px 1px #000;
+    color: #fff;
 }
 /* --------------------------- ITEM COUNT -------------------------------- */
 .agregar-guitars{
@@ -240,6 +254,7 @@ body{
     background-color: #fff;
     padding: 3px 5px;
     border-radius: 40px;
+    box-shadow: 2px 2px 2px #000;
 }
 #pantalla button{
     width: 40px;
@@ -253,6 +268,8 @@ body{
     justify-content: center;
     align-items: center;
     border: 2px solid #000;
+    box-shadow: 2px 2px 2px #000;
+
 }
 #cantidad{
     display: flex;
@@ -261,6 +278,7 @@ body{
     text-align: center;
     padding: 0;
     color: #000;
+
 }
 
 .tarjeta-inferior{
@@ -272,7 +290,7 @@ body{
     margin: 0 auto;
     font-size: 10px;
 }
-.tarjeta-inferior #agregar{
+.tarjeta-inferior #agregar, #terminar-compra{
     min-width: 300px;
     display: flex;
     text-align: center;
@@ -282,47 +300,93 @@ body{
     letter-spacing: 2px;
     text-transform: uppercase;
     background-color:white;
-    font-weight: 600;
+    font-weight: 900;
     color: black;
     margin-left: 3px;
     padding: 10px 10px;
     border-radius: 20px;
-    
+    font-size: 14px;
+    box-shadow: 2px 2px 2px #000; 
 }
+.tarjeta-inferior #agregar:disabled{
+    opacity: 0.9;
+    color: rgb(130, 130, 129);
+}
+
+
 .tarjeta-inferior #terminar-compra{
-    min-width: 300px;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    background-color:rgb(233, 229, 163);
-    font-weight: 600;
-    color: black;
-    margin-left: 3px;
-    padding: 10px 10px;
-    border-radius: 20px;
-    
+    background-color:rgb(38,3,63);
+    color: rgb(255, 255, 255);    
+    border:none;
+    box-shadow: 2px 2px 2px #000;
 }
 /* --------------------------- ITEM DETAIL -------------------------------- */
+.item-detail-container-principal{
+    height: 550px;
+    width: 800px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
 .item-detail-container{
+    position: absolute;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 60px;
+    margin-top: 100px;
+    gap: 5em;
 }
 .item-detail-image{
+    width: 350px;
+    height: 500px;
     background-color: #fff;
-    margin: 20px 0 0 0;
+   
 }
 .item-detail-image img{
     margin: 25% 25%;
 }
+.item-detail-description{
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.item-detail-container h1{
+    font-size: 30px;
+    margin: 0
+}
+.item-detail-description div:nth-child(2) td{
+    font-size: 12px;
+    box-shadow: 2px 2px 2px #000;
+}
+.item-detail-box{
+    display: flex;
+    
+}
+.precios{
+    display: flex;
+    gap: 10px;
+    margin: 0 auto;
+    font-size: 25px;
+}
+.item-detail-price-af{
+    text-decoration: line-through;
+    color: rgb(173, 181, 187);
+
+}
 
 /* --------------------------- PIE PAGINA -------------------------------- */
-.App #pie-pagina{
+
+body #pie-pagina{
+    width: 100%;
+    position: absolute;
     margin: 0 auto;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(17, 6, 21);
+
 }
 #pie-pagina{
     width: 1000px;
@@ -357,8 +421,9 @@ body{
     padding: 0 10px;
 }
 
-.pie-pagina-listado ul li{
+.pie-pagina-listado ul li a{
     align-self: flex-start;
-    
+    color: rgb(188, 188, 234);
+    text-decoration: none;
 }
 
