@@ -3,6 +3,7 @@ import React from 'react';
 const BarraNavegacion = () => {
     return (
         <div className='responsive-header global-header'>
+        hola
             <div className="responsive-header_branding">
 
             </div>

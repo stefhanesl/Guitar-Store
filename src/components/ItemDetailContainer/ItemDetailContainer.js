@@ -1,9 +1,9 @@
 import ItemDetail from '../ItemDetail/ItemDetail';
-import {guitarras} from './../Datos/datos'
-import { getProducts } from '../CustomHooks/useFetch';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Spi from '../spi/spi';
+import { db } from '../../utils/firebase'
+import { doc, getDoc } from 'firebase/firestore';
 
 const ItemDetailContainer = ({agregarAlCarrito}) => {
     const { identificador } = useParams()
@@ -12,13 +12,17 @@ const ItemDetailContainer = ({agregarAlCarrito}) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        getProducts(guitarras)
-        .then( respuesta => {
-            const nuevaGuitarra = respuesta.find( guita => guita.id === identificador )
-            setProduct(nuevaGuitarra)
+        const getProduct = async() => {
+            const consulta = doc(db, "products", identificador);
+            const respuesta = await getDoc(consulta);
+            const objeto = {
+                ...respuesta.data(),
+                id: respuesta.id
+            }
+            setProduct(objeto)
             setLoading(false)
-        })
-        .catch( error => `No se pueden acceder al producto: ${error}`)
+        }
+        getProduct()
     }, [identificador]);
 
     return (

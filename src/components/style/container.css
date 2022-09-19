@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@100;300;600;800&family=League+Spartan:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@100;300;600;800&family=Roboto:ital,wght@0,300;0,500;1,900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
-    color: #fff;
     list-style: none;
     text-decoration: none;
+    font-family: 'Roboto', sans-serif;
     
 }
 html {
@@ -14,56 +17,7 @@ body{
     background-color: rgb(24, 22, 22);
     margin-bottom: 150px;
 }
-/* --------------------------- ITEM LIST CONTAINER -------------------------------- */
-/* Carousel */
-.carousel .carousel-inner{
-    display: flex;
-}
-.carousel-item{
-    position: relative;
-    height: 350px;
-    width: 900px;
-    margin: 0 auto;
-    
-}
 
-.carousel-item img{
-    padding-top: 30px;
-    position: absolute;
-    height: 90%;
-    border-radius: 10px;
-}
-
-.container-guitars{
-    max-width: 98%;
-    overflow-x: hidden;
-    margin:auto;
-}
-
-.contenedor-general-productos{
-    display: block;
-    position: relative;
-}
-.contenedor-general-productos::after{
-    content: "";
-    background-image: url('./../../../public/assets/img/fondo-store.jpg');
-    /* height: 100%; */
-    opacity: 0.2;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1; 
-    /* overflow: visible; */
-    /* background-position: center center; */
-    background-repeat: repeat;
-
-    /* background-attachment: fixed; */
-    /* -webkit-background-size: cover;
-    -moz-background-size: cover; */
-    /* background-size: cover; */
-}
 /* --------------------------- ITEM LIST -------------------------------- */
 
 .guitars-grid{
@@ -72,6 +26,7 @@ body{
     grid-gap: 15px;
     padding: 2em 1em;
     box-sizing: border-box;
+    color: #fff;
 }
 /* ---------------000000000000000000---------------- */
 /* @media only screen and (max-width: 400px){
@@ -110,6 +65,7 @@ body{
 }
 /* --------------------------- ITEM -------------------------------- */
 .guitar-tarjeta{
+    color: #fff;
     position: relative;
     background-color: rgb(24, 22, 22);
     overflow: hidden;
@@ -237,6 +193,7 @@ body{
 }
 /* --------------------------- ITEM COUNT -------------------------------- */
 .agregar-guitars{
+    color: #fff;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -322,7 +279,7 @@ body{
 }
 /* --------------------------- ITEM DETAIL -------------------------------- */
 .item-detail-container-principal{
-    height: 550px;
+    height: 700px;
     width: 800px;
     position: relative;
     display: flex;
@@ -340,10 +297,10 @@ body{
     width: 350px;
     height: 500px;
     background-color: #fff;
-   
+    border-radius: 10%;
 }
 .item-detail-image img{
-    margin: 25% 25%;
+    margin: 40% 25%;
 }
 .item-detail-description{
     width: 450px;
@@ -354,7 +311,8 @@ body{
 }
 .item-detail-container h1{
     font-size: 30px;
-    margin: 0
+    margin: 0;
+    color: rgb(219, 173, 236);
 }
 .item-detail-description div:nth-child(2) td{
     font-size: 12px;

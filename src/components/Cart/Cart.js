@@ -14,7 +14,7 @@ const CartPagina = () => {
     const { addItem, removeItem, clear, listaProductosCarrito } = useContext(CartContext);
     
     return (
-        <div className='cart-container'>
+        <div className='cart-container mg-top'>
             <div className='cart-container-img'>
                 <img class='img-main' />
             </div>

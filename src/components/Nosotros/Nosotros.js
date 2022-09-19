@@ -2,7 +2,7 @@ import React from 'react';
 
 const Nosotros = () => {
     return (
-        <div>
+        <div className='mg-top'>
             <h1>Nosotros</h1>
             <div>
                 <p>

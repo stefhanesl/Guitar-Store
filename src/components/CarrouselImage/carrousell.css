@@ -1,24 +1,73 @@
+/* .carousel .carousel-inner{
+    display: flex;
+}
+.carousel-item{
+    position: relative;
+    height: 350px;
+    width: 900px;
+    margin: 0 auto;
+    
+}
+
+.carousel-item img{
+    padding-top: 30px;
+    position: absolute;
+    height: 90%;
+    border-radius: 10px;
+} */
+.carousel-item-container img{
+    height: 350px;
+}
+.container-guitars{
+    max-width: 98%;
+    overflow-x: hidden;
+    margin:auto;
+}
+
+.contenedor-general-productos{
+    display: block;
+    position: relative;
+}
+.contenedor-general-productos::after{
+    content: "";
+    background-image: url('./../../../public/assets/img/fondo-store.jpg');
+    /* height: 100%; */
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1; 
+    /* overflow: visible; */
+    /* background-position: center center; */
+    background-repeat: repeat;
+
+    /* background-attachment: fixed; */
+    /* -webkit-background-size: cover;
+    -moz-background-size: cover; */
+    /* background-size: cover; */
+}
 .caption-carrousell{
    display: flex;
    flex-direction: column;
-   justify-content: center;
-   align-items: center;
+   justify-content: end;
+   align-items: flex-end;
 }
 .title-carrousell{
-    background-color: rgb(241, 225, 225);
-    opacity: 0.7;
-    color: #000;
-    border-radius: 50%;
-    padding: 20px 40px;
-    font-weight: bolder;
-    
+    color: #fff;
+    position: absolute;
+    right: -20%;
+    top: -210%;
+    font-size: 25px;
+    z-index: 20;
 }
 p{
     color: rgb(252, 252, 252);
+    font-size: 17px;
+    font-style: italic;
     font-weight: bolder;
-    text-decoration: overline underline;
-    background-color: rgb(51, 70, 53);
-    opacity: 0.9;
-    width: 300px;
-    border-radius: 10px;
+    position: absolute;
+    right: -15%;
+    top: -30%;
 }

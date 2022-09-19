@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import ItemList from '../ItemList/ItemList';
-import { guitarras } from '../Datos/datos';
-import { getProducts } from '../CustomHooks/useFetch';
 import { useParams } from "react-router-dom";
-import CarrouselImage from '../CarrouselImage/CarrouselImage';
 import Spinner from '../spi/spinner';
+import { collection, getDocs, query, where, limit } from "firebase/firestore";
+import { db } from "../../utils/firebase";
+
 
 export const ItemListContainer = () => {
     const {tipoProducto} = useParams();
@@ -12,22 +12,35 @@ export const ItemListContainer = () => {
     const [guitars, setGuitars] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        getProducts(guitarras).then( respuesta => {
-                if(!tipoProducto){
-                    setGuitars(respuesta)
-                    setLoading(false)
-                }else{
-                    const nuevasGuitarras = respuesta.filter( nuevaGuitarra => nuevaGuitarra.categoria === tipoProducto )
-                    setGuitars(nuevasGuitarras)
-                    setLoading(false)
-                }
-            })
-    }, [tipoProducto]);
+
+    useEffect(()=>{
+        const getProducts = async() => {
+
+            if(!tipoProducto){
+                const pedido = collection(db,"items");
+                const response = await getDocs(pedido);
+                const docs = response.docs;
+                const respuesta = docs.map(doc=>{return {...doc.data(), id:doc.id} })
+                console.log(respuesta)
+                setGuitars(respuesta)
+                setLoading(false)
+            }else{
+                const consulta = query(collection(db,"products"), where("categoria", "==", tipoProducto), limit(1));
+                const response = await getDocs(consulta);
+                const docs = response.docs;
+                const respuesta = docs.map(doc=>{return {...doc.data(), id:doc.id} })
+                console.log(respuesta)
+                setGuitars(respuesta)
+                setLoading(false)
+            }
+
+        }
+        getProducts()
+    },[tipoProducto])
 
     return (
-        <div className='contenedor-general-productos'>
-            <CarrouselImage />
+        <div className='contenedor-general-productos mg-top'>
+         
             { loading 
                 ?   <Spinner />
                 :   <div className='container-guitars' id='fondo'>

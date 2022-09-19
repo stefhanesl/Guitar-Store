@@ -34,6 +34,11 @@ const NavBar = ({agregarValorCarrito}) => {
                         </NavLink>
                         <NavLink 
                             className={({isActive})=>isActive ? "claseActive": "claseInactive"}
+                            to="/category">
+                            Catálogo
+                        </NavLink>
+                        <NavLink 
+                            className={({isActive})=>isActive ? "claseActive": "claseInactive"}
                             to="/category/guitarra">
                             Guitarras
                         </NavLink>

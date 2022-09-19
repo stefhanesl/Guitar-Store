@@ -6,6 +6,7 @@
 body{
     font-family: 'Roboto Serif', serif;  
     font-size: 15px;
+    color: #fff;
 }
 
 #barra-navegacion{
@@ -16,6 +17,10 @@ body{
     top: 0;
     margin: 0;
     z-index: 10;
+    height: 60px;
+}
+.mg-top{
+    margin-top: 65px;
 }
 .link-nav{
     text-decoration: none;

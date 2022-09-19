@@ -5,22 +5,22 @@ import './carrousell.css'
 const CarrouselImage = () => {
     return (
         <>
-            <Carousel slide={false}>
-                <Carousel.Item>
+            <Carousel slide={false} >
+                <Carousel.Item className='carousel-item-container'>
                     <img
                     className="d-block w-100"
-                    src="/assets/carrousel-image1.webp"
+                    src="/assets/c1.jpg"
                     alt="First slide"
                     />
                     <Carousel.Caption className='caption-carrousell'>
-                    <h3 className='title-carrousell'>Compra ahora - Paga 2023</h3>
+                    <h3 className='title-carrousell'>¡Compra ahora! Paga 2023</h3>
                     <p>Ordene en linea o en la tienda.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item>
+                <Carousel.Item className='carousel-item-container'>
                     <img
                     className="d-block w-100"
-                    src="/assets/carrousel-image2.webp"
+                    src="/assets/c2.png"
                     alt="Second slide"
                     />
 
@@ -31,10 +31,10 @@ const CarrouselImage = () => {
                     <p>En marcas calificadas.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item>
+                <Carousel.Item className='carousel-item-container'>
                     <img
                     className="d-block w-100"
-                    src="/assets/carrousel-image4.jpg"
+                    src="/assets/c3.jpg"
                     alt="Third slide"
                     />
 
@@ -45,6 +45,7 @@ const CarrouselImage = () => {
                     </p>
                     </Carousel.Caption>
                 </Carousel.Item>
+
             </Carousel>
         </>
     );

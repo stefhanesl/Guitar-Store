@@ -6,7 +6,7 @@ import Table from 'react-bootstrap/esm/Table';
 const ItemDetail = ({guitarra}) => {
     const {addItem} = useContext(CartContext);
 
-    const {name, price, calification, images: {img1}, features:{feature1, feature2, feature3}, stock} = guitarra;
+    const {name, price, calification, images, features:{feature1, feature2, feature3}, stock} = guitarra;
 
     const agregarAlCarrito = (count) => {
         addItem(guitarra, count)
@@ -16,11 +16,12 @@ const ItemDetail = ({guitarra}) => {
         <div className='item-detail-container-principal'>
             <div className='item-detail-container'>
                 <div className='item-detail-image'>
-                    <img src={img1} alt='guitarra' width='200px'/>
+                    <img src={images} alt='guitarra' width='200px'/>
                 </div>
                 <div className='item-detail-description'>
                     <h1 className='item-detail-title'>{name}</h1>
                     <div className='item-detail-explanation'>
+                    <hr />
                         <div className='precios'>
                             <div className='item-detail-price'>${price}</div> 
                             <div className='item-detail-price-af'>${(price*1.1).toFixed(2)}</div>
@@ -41,7 +42,7 @@ const ItemDetail = ({guitarra}) => {
                                 </thead>
                             </Table>
                     </div>
-        
+            
                     <div className='item-detail-box'>
                         <div className='item-detail-starts'>
                             <ul>

@@ -6,9 +6,7 @@ const Item = ({guitar}) => {
         name,
         id,
         calification,
-        images: {
-            img1
-        },
+        images,
         price,
         discount} = guitar
     
@@ -20,7 +18,7 @@ const Item = ({guitar}) => {
                 <h5 className={descuento>0 ? 'descuento-red' : 'descuento-green' }>{descuento > 0 ? `- ${discount} de descuento  ¡Oferta Limitada!` : 'ON SALE'}</h5>
             </div>
             <div className='guitar-img-container'>
-                <img src={img1}
+                <img src={images}
                     alt='guitar'
                     className='guitar-img' />
             </div>
