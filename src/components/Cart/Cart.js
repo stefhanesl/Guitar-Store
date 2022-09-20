@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './../style/navbar.css'
 import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext/CartContext';
@@ -8,15 +8,45 @@ import { MdCleaningServices } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import './cart.css'
 import { GiReturnArrow } from 'react-icons/gi'
+import Formulario from '../Formulario/Formulario';
+import { addDoc, collection} from 'firebase/firestore'
+import { db } from '../../utils/firebase';
+
 
 const CartPagina = () => {
 
-    const { addItem, removeItem, clear, listaProductosCarrito } = useContext(CartContext);
+    const { removeItem, clear, listaProductosCarrito, totalCompra } = useContext(CartContext);
+    const [orderId, setOrderId] = useState("");
+    const [formEnviado, setFormEnviado] = useState(false);
+    //{ buyer: { name, phone, email }, items: [{ id, title, price }], date, total  }
+    
+    const getDataForm = (e) => {
+        
+        const orden = {
+            buyer: {
+                name: e.target[0].value, 
+                phone: e.target[1].value, 
+                email: e.target[2].value
+            },
+            items: listaProductosCarrito,
+            total: totalCompra
+        }
+        console.log(orden)
+        const orderCollection = collection(db, 'orders');
+
+        addDoc(orderCollection, orden).then((respuesta) => {
+            
+            setOrderId(respuesta.id)
+        })
+
+        setFormEnviado(true)
+    }
+    
     
     return (
         <div className='cart-container mg-top'>
             <div className='cart-container-img'>
-                <img class='img-main' />
+                <img className='img-main' alt='portada' />
             </div>
             <h1>LISTA DE COMPRAS</h1>
 
@@ -49,6 +79,19 @@ const CartPagina = () => {
                     </>
                 }
             </Table>
+            <tr></tr>
+            <Table variant="light">
+                <thead>
+                    <tr>
+                        <th colSpan={9}>Total a pagar</th>
+                        <th colSpan={1}>{totalCompra}</th>
+                    </tr>
+                </thead>
+            </Table>
+            <tr></tr>
+            <Formulario getDataForm={getDataForm}/>
+            <div> {orderId && `El orden de su compra es ${orderId}`}</div>
+            <tr></tr>
             <div className='btn-botones-cart'>
                 { listaProductosCarrito.length === 0 &&
                     <Link to='/'>

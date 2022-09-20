@@ -1,16 +1,45 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { CartContext } from '../../context/CartContext/CartContext';
 import ItemCount from '../ItemCount/ItemCount';
 import Table from 'react-bootstrap/esm/Table';
+import { db } from '../../utils/firebase';
+import { writeBatch } from 'firebase/firestore'
+
 
 const ItemDetail = ({guitarra}) => {
-    const {addItem} = useContext(CartContext);
-
+    const {addItem, listaProductosCarrito} = useContext(CartContext);
+    
     const {name, price, calification, images, features:{feature1, feature2, feature3}, stock} = guitarra;
-    console.log(images)
+
+    const [actualizarStock, setActualizarStock] = useState(stock);
+
     const agregarAlCarrito = (count) => {
         addItem(guitarra, count)
     }
+
+    const updateStock = ()=>{
+
+        listaProductosCarrito.forEach( producto => {
+
+            const {calification, cantidad, categoria, discount, features, id, images,  name, price, stock} = producto
+            setActualizarStock(stock - cantidad)
+            const batch = writeBatch(db)
+
+            batch.update(id, {
+                calification: calification,
+                categoria: categoria,
+                discount: discount,
+                features: features,
+                id: id,
+                images: images,
+                name: name,
+                price: price,
+                stock: stock - cantidad,
+            })
+
+            batch.commit()
+        });
+      }
 
     return (
         <div className='item-detail-container-principal'>
@@ -41,6 +70,7 @@ const ItemDetail = ({guitarra}) => {
                                     </tr>
                                 </thead>
                             </Table>
+                          
                     </div>
             
                     <div className='item-detail-box'>
@@ -55,7 +85,17 @@ const ItemDetail = ({guitarra}) => {
                             </ul>
                         </div>
                     </div>
-                    <ItemCount  stock={stock} agregarAlCarrito={agregarAlCarrito}/>
+                    <div class="item-detail-explanation">
+                        <Table striped bordered hover variant="dark" className='tabla-cart'>
+                            <thead>
+                                <tr>
+                                    <td>STOCK</td>
+                                    <td>{actualizarStock}</td>
+                                </tr>
+                            </thead>
+                        </Table>
+                    </div>
+                    <ItemCount  stock={actualizarStock} agregarAlCarrito={agregarAlCarrito}/>
                 </div>
             </div>
 

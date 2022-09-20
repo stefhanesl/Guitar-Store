@@ -3,7 +3,7 @@ import { RiDeleteBin6Line } from 'react-icons/ri';
 
 const CartView = ({producto, indice, removeItem}) => {
     
-    const { id, name, price,  images: {img1}, cantidad } = producto
+    const { id, name, price,  images, cantidad } = producto
 
 
 
@@ -11,7 +11,7 @@ const CartView = ({producto, indice, removeItem}) => {
         <>
             <tr>
                 <td>{indice+1}</td>
-                <td><img src={img1} alt='producto' width='50px'/></td>
+                <td><img src={images} alt='producto' width='50px'/></td>
                 <td>{name}</td>
                 <td>{cantidad}</td>
                 <td>{price}</td>

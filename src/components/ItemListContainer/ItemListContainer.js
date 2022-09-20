@@ -25,8 +25,6 @@ export const ItemListContainer = () => {
 
             const respuesta = docs.map(doc=>{return {...doc.data(), id:doc.id} })
 
-            console.log(respuesta)
-
             setGuitars(respuesta)
 
             setLoading(false)
