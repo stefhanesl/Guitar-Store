@@ -7,7 +7,7 @@ const ItemDetail = ({guitarra}) => {
     const {addItem} = useContext(CartContext);
 
     const {name, price, calification, images, features:{feature1, feature2, feature3}, stock} = guitarra;
-
+    console.log(images)
     const agregarAlCarrito = (count) => {
         addItem(guitarra, count)
     }

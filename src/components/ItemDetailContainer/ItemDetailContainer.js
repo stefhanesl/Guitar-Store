@@ -19,6 +19,7 @@ const ItemDetailContainer = ({agregarAlCarrito}) => {
                 ...respuesta.data(),
                 id: respuesta.id
             }
+            console.log(objeto)
             setProduct(objeto)
             setLoading(false)
         }

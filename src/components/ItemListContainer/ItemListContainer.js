@@ -14,28 +14,27 @@ export const ItemListContainer = () => {
 
 
     useEffect(()=>{
+
         const getProducts = async() => {
 
-            if(!tipoProducto){
-                const pedido = collection(db,"items");
-                const response = await getDocs(pedido);
-                const docs = response.docs;
-                const respuesta = docs.map(doc=>{return {...doc.data(), id:doc.id} })
-                console.log(respuesta)
-                setGuitars(respuesta)
-                setLoading(false)
-            }else{
-                const consulta = query(collection(db,"products"), where("categoria", "==", tipoProducto), limit(1));
-                const response = await getDocs(consulta);
-                const docs = response.docs;
-                const respuesta = docs.map(doc=>{return {...doc.data(), id:doc.id} })
-                console.log(respuesta)
-                setGuitars(respuesta)
-                setLoading(false)
-            }
+            const consulta = !tipoProducto ? collection(db,"products") : query(collection(db,"products"), where("categoria", "==", tipoProducto), limit(1));
+
+            const response = await getDocs(consulta);
+
+            const docs = response.docs;
+
+            const respuesta = docs.map(doc=>{return {...doc.data(), id:doc.id} })
+
+            console.log(respuesta)
+
+            setGuitars(respuesta)
+
+            setLoading(false)
 
         }
+
         getProducts()
+
     },[tipoProducto])
 
     return (
