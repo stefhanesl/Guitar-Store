@@ -17,8 +17,7 @@ const CartPagina = () => {
 
     const { removeItem, clear, listaProductosCarrito, totalCompra } = useContext(CartContext);
     const [orderId, setOrderId] = useState("");
-    const [formEnviado, setFormEnviado] = useState(false);
-    //{ buyer: { name, phone, email }, items: [{ id, title, price }], date, total  }
+
     
     const getDataForm = (e) => {
         
@@ -29,6 +28,7 @@ const CartPagina = () => {
                 email: e.target[2].value
             },
             items: listaProductosCarrito,
+            date: new Date(),
             total: totalCompra
         }
         console.log(orden)
@@ -39,7 +39,7 @@ const CartPagina = () => {
             setOrderId(respuesta.id)
         })
 
-        setFormEnviado(true)
+      
     }
     
     
@@ -90,7 +90,7 @@ const CartPagina = () => {
             </Table>
             <tr></tr>
             <Formulario getDataForm={getDataForm}/>
-            <div> {orderId && `El orden de su compra es ${orderId}`}</div>
+            <div> {orderId && `El orden de su compra es ${orderId}. ¡Gracias por su compra!`}</div>
             <tr></tr>
             <div className='btn-botones-cart'>
                 { listaProductosCarrito.length === 0 &&
