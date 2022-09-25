@@ -1,7 +1,13 @@
-@import url('https://fonts.googleapis.com/css2? family= Roboto+Serif:ital,opsz@1,8..144 & display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@100;300;600;800&family=League+Spartan:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@100;300;600;800&family=Roboto:ital,wght@0,300;0,500;1,900&display=swap');
+
 *{
-    padding: 0;
     margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    
 }
 body{
     font-family: 'Roboto Serif', serif;  
@@ -9,75 +15,143 @@ body{
     color: #fff;
 }
 
-#barra-navegacion{
-    position: fixed;
-    width: 100%;
-    background: rgb(26, 25, 24);
-    padding: 0;
+ #barra-navegacion{
     top: 0;
-    margin: 0;
-    z-index: 10;
-    height: 60px;
-}
-.mg-top{
-    margin-top: 65px;
-}
-.link-nav{
-    text-decoration: none;
-}
-.navbar>.container{
-    font-size: 12px;  
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    text-transform: uppercase;
-}
-.navbar-brand{
-    padding: 0;
-    margin: 0;
-    margin-left: 40px;
-}
-#logo{
-    padding: 0;
-    margin: 0;
+    align-items: center;
+    padding: 0 30px;
+    box-shadow: 0 2px 5px 0 rgba(228, 225, 225, 0.16), 0 2px 10px 0 rgba(207, 204, 204, 0.12);
+    z-index: 30;
+    height: auto;
+    background-color: #181616;
+    transition: top 0.5s;
+    
 }
 
-#barra{
-    display: flex;
-    gap: 15px;
+#logo{
+    padding-top: 3px;
+    width: 80px;
+    border-radius: 100%;
 }
-#barra *{
+
+#logo:hover{
+    transform: translateY(12%) scale(0.9);   
+}   
+#barra-navegacion ul{
+    display: flex;
+    gap: 30px;
+}
+
+.barra-top{
+    align-self: flex-start;
+    font-size: 24px;
+    height: 40px;
+    margin-bottom: 1em;
+}
+.barra-top ul li a{
+    text-shadow: 2px 2px  rgba(31, 24, 24, 0.16);
     color: #fff;
     text-decoration: none;
 }
+.barra-top ul li.nav-icono ul{
+    margin-left: 18rem;
+}
+
+.barra-top ul li.nav-tema:hover{
+    cursor: pointer;
+    transform: translateY(-0.7px) scale(.95);
+    transform-origin: top left; 
+}
+.barra-top ul li.nav-tema a:hover{
+    border-bottom: 0.5px solid #04D4C1;
+}
+.barra-top ul li.nav-tema > a.claseActive{
+    border-bottom: 0.5px solid #04D4C1;
+}
+
+.nav-icono ul li:nth-child(1){
+    transform: translateY(28%);
+}
+#iniciar-sesion{
+    margin-left: 40px;
+    text-align: center;
+}
+#iniciar-sesion h5{
+    font-size: 10px;
+    color: #04D4C1;
+}
+#iniciar-sesion:hover{
+    opacity: 0.7;
+}
+
 #carrito{
+    margin-left: 30px;
     position: relative;
     display: flex;
-    justify-content: space-around;
-    margin-right: 30px;
-    align-items: center;
-    gap: 10px;
-    text-align: center;
-    padding-top: 5px;
-}
-#carrito #car{
-    position: absolute;
-    font-size: 100px;
-    margin: 0 auto;
     align-items: flex-end;
+    top: 20%;
+}
+#carrito:hover{
+    opacity: 0.7;
 }
 #cantidad-carrito{
-    margin-bottom: 35px;
-    margin-left: 35px;
     color: #212121;
     background-color: #fff;
-    border-radius: 100%;
-    padding: 3px 10px;
-    text-align: center;
+    position: absolute;
+    right: -50%;
+    top: -10%;
+    padding: 0 5px;
+    border-radius: 50%;
+    font-size: 13px;
 }
-#barra-navegacion .claseActive{
-    color: rgb(188, 188, 234);
-    font-weight: 900;
-}
+
 .cart-container{
     padding: 100px 0;
 }
 
+.barra-bottom{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 13px;
+}
+.barra-bottom ul{
+    margin-bottom: 2px;
+}
+.barra-bottom ul li ul{
+    margin-left: 10em;
+}
+.barra-bottom ul li a{
+    text-shadow: 0px 2px  rgba(31, 24, 24, 0.16);
+    color: #fff;    
+    text-decoration: none;
+}
+
+.barra-bottom ul li.nav-tema:hover{
+    cursor: pointer;
+    transform: translateY(1px) scale(1.05);
+}
+.barra-bottom ul li.nav-tema a:hover{
+    border-bottom: 0.5px solid #04D4C1;
+}
+.barra-bottom ul li.nav-tema > a.claseActive{
+    border-bottom: 0.5px solid #04D4C1;
+}
+
+
+.barra-bottom input{
+    width: 50px;
+    outline: none;
+}
+.barra-bottom ul ul li>*{
+    margin-left: 5px;
+}
+.barra-bottom ul ul button{
+    padding: 0 12px;
+    border: 2px solid #04D4C1;
+    background-color: rgb(4, 212, 193, 0.6);
+    color: #fff;
+    
+}

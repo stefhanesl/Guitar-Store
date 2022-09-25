@@ -10,9 +10,9 @@ const ItemList = ({guitars}) => {
         <div className='guitars-grid'>
             { guitars.length > 0 && 
                     <>
-                        {guitars.map(guitar => {
+                        {guitars.map( (guitar, indice) => {
                             return(
-                                <Link key={parseInt(guitar.id)} className='guitar-card' to={`/item/${guitar.id}`}>
+                                <Link key={indice} className='guitar-card' to={`/item/${guitar.id}`}>
                                     <Item guitar={guitar}/>
                                 </Link>
                             )

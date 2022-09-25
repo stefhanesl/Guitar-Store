@@ -1,32 +1,61 @@
+:root{
+    --color-letras-btn: #04D4C1;
+    --color-tenue-celeste: #a4f4ed;
+    --color-fondo: #181616;
+    --box-shadow-gris: 0 2px 5px 0 rgba(228, 225, 225, 0.16), 0 2px 10px 0 rgba(207, 204, 204, 0.12);
+    --box-shadow-gris-hover: 0 2px 5px 0 rgba(228, 225, 225, 0.16), 0 2px 10px 0 rgba(207, 204, 204, 0.12);
+}
+
 .cart-container{
     position: relative;
     padding: 0;
     margin: 0;
 }
 .cart-container h1{
-    color: rgb(221, 171, 245);
+    color: var(--color-tenue-celeste);
+    text-align: center;
 }
 .cart-container-img{
     position: relative;
     width: 100%;
     height: 300px;
-    /* overflow: hidden;
-    margin: 10px; */
     overflow: hidden;
 }
 .cart-container-img{
-
-    background-image: url('./../../../public/assets/1.jpg');
-    min-width: 100%;
-    height: 300px;
-    background-size: cover;
+    background-image: url('./../../../public/assets/portada.jpg');
+    width: 100%;
+    height: 250px;
+    background-size: 100%;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: 30% 20%;
-}
-.tabla-cart{
+    background-position: bottom 7% right;
+    background-attachment: local;
 
 }
+.tabla-cart thead th{
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 25px;
+}
+.tabla-cart tbody td{
+    text-align: center;
+    text-transform: uppercase;
+
+}
+.tabla-cart tbody td h2{
+    font-size: 15px;
+}
+.table-total thead th{
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.table-total thead th:nth-child(2){
+    background-color: #ccfbf7;
+    text-align: center;
+    color: #000;
+}
+
 .btn-botones-cart{
     display: flex;
     align-items: center;
@@ -47,19 +76,19 @@
     width: 330px;
     height: 60px;
     color: #fff;
-    background-color: rgb(38, 3, 63);
+    background-color: var(--color-letras-btn);
     padding: 10px 25px;
     border: none;
     border-radius: 30px;
     margin-bottom: 20px;
     text-transform: uppercase;
-    box-shadow: 2px 2px 1px #000;
+    box-shadow: var(--box-shadow-gris);
     font-size: 17px;
 }
 .btn-vaciar-carrito:hover,
 .btn-regresar-catalogo:hover{
     opacity: 0.8;
-    box-shadow: 1px 1px 1px rgb(90, 61, 147);
+    box-shadow: var(--box-shadow-gris-hover);
 }
 .btn-icono{
     margin-right: 10px;

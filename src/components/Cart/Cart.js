@@ -16,9 +16,9 @@ import { db } from '../../utils/firebase';
 const CartPagina = () => {
 
     const { removeItem, clear, listaProductosCarrito, totalCompra } = useContext(CartContext);
+    
     const [orderId, setOrderId] = useState("");
 
-    
     const getDataForm = (e) => {
         
         const orden = {
@@ -46,7 +46,7 @@ const CartPagina = () => {
     return (
         <div className='cart-container mg-top'>
             <div className='cart-container-img'>
-                <img className='img-main' alt='portada' />
+              
             </div>
             <h1>LISTA DE COMPRAS</h1>
 
@@ -59,7 +59,7 @@ const CartPagina = () => {
                     <th>Cantidad</th>
                     <th>Precio</th>
                     <th>Total</th>
-                    <th>Eliminar</th>
+                    <th></th>
                     </tr>
                 </thead>
                 { listaProductosCarrito.length > 0 
@@ -80,21 +80,24 @@ const CartPagina = () => {
                 }
             </Table>
             <tr></tr>
-            <Table variant="light">
-                <thead>
-                    <tr>
-                        <th colSpan={9}>Total a pagar</th>
-                        <th colSpan={1}>{totalCompra}</th>
-                    </tr>
-                </thead>
-            </Table>
+            {
+                totalCompra > 0 && 
+                    <Table className='table-total' variant="dark">
+                        <thead>
+                            <tr>
+                                <th colSpan={9}>Total a pagar:</th>
+                                <th colSpan={1}>${(totalCompra).toFixed(2)}</th>
+                            </tr>
+                        </thead>
+                    </Table>
+            }
             <tr></tr>
             <Formulario getDataForm={getDataForm}/>
             <div> {orderId && `El orden de su compra es ${orderId}. ¡Gracias por su compra!`}</div>
             <tr></tr>
             <div className='btn-botones-cart'>
                 { listaProductosCarrito.length === 0 &&
-                    <Link to='/'>
+                    <Link to='/category'>
                             <button className='btn-regresar-catalogo'><GiReturnArrow  size='40px' className='btn-icono'/>Regresar a la tienda</button>
                     </Link>
                 }

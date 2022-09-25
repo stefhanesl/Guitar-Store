@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Blinker:wght@100;300;600;800&family=League+Spartan:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Blinker:wght@100;300;600;800&family=Roboto:ital,wght@0,300;0,500;1,900&display=swap');
 
+:root{
+    --color-letras-btn: #04D4C1;
+    --color-tenue-celeste: #a4f4ed;
+    --color-fondo: #181616;
+    --box-shadow-gris: 0 2px 5px 0 rgba(228, 225, 225, 0.16), 0 2px 10px 0 rgba(207, 204, 204, 0.12);
+    --box-shadow-gris-hover: 0 2px 5px 0 rgba(228, 225, 225, 0.16), 0 2px 10px 0 rgba(207, 204, 204, 0.12);
+}
 *{
     margin: 0;
     padding: 0;
@@ -10,12 +17,11 @@
     
 }
 html {
-    min-height: 100%;
     position: relative;
   }
 body{
-    background-color: rgb(24, 22, 22);
-    margin-bottom: 150px;
+    background-color: var(--color-fondo);
+
 }
 
 /* --------------------------- ITEM LIST -------------------------------- */
@@ -27,31 +33,9 @@ body{
     padding: 2em 1em;
     box-sizing: border-box;
     color: #fff;
+    box-sizing: border-box;
 }
-/* ---------------000000000000000000---------------- */
-/* @media only screen and (max-width: 400px){
-    .guitars-grid {
-        grid-template-rows: 1fr;
-    }
-    .guitar-card{
-        width: 4rem;
-    }
-}
-@media screen and (min-width: 420px) and (max-width: 749px){
-    .guitars-grid {
-        grid-template-columns: repeat(2,1fr);
-        grid-gap: 0px;
-    }
-    .guitar-card{
-        max-width: 200px;
-    }
-}
-@media screen and (min-width: 750px) and (max-width: 1200px){
-    .guitars-grid {
-    grid-template-columns: repeat(3,1fr);
-    }
-} */
-/* ----------------000000000000000000000--------------- */
+
 .guitar-card{
     width: 300px;
     margin: 0 auto;
@@ -60,14 +44,15 @@ body{
     align-items: center;
     padding: 10px;
     text-decoration: none;
-    
+    box-sizing: border-box;
 
 }
 /* --------------------------- ITEM -------------------------------- */
 .guitar-tarjeta{
+    width: 100%;
     color: #fff;
     position: relative;
-    background-color: rgb(24, 22, 22);
+    background-color: var(--color-fondo);
     overflow: hidden;
     box-sizing: border-box;
     display: flex;
@@ -75,31 +60,34 @@ body{
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    box-shadow: 2px 2px 2px rgb(0, 0, 0);
+    box-shadow: var(--box-shadow-gris)
+
 }
 .guitar-tarjeta:hover{
-    box-shadow: 3px 3px 2px rgb(62, 12, 65);
+    box-shadow: var(--box-shadow-gris-hover);
+
 }
 .guitar-tarjeta .card-body{
-    background-color: rgb(24, 22, 22);
+    width: 100%;
+    background-color: var(--color-fondo);
 
 }
 .guitar-tarjeta-descuento{
     width: 100%;
     position: absolute;
-    color: white;
+    color: #fff;
     font-weight: 800;
     top: -2px;
 }
 .descuento-red{
     width: 100%;
     font-size: 15px;
-    background-color: rgb(134, 15, 177);
+    background-color: rgb(243, 28, 28, 0.8);
     padding: 2px 10px;
 }
 .descuento-green{
     position: absolute;
-    background-color: green;
+    background-color: rgba(10, 232, 10, 0.7);
     font-size: 15px;
     font-weight: 700;
     padding: 20px 2px ;
@@ -112,27 +100,32 @@ body{
     background-color: #fff;
     padding: 20px 0px 10px 0px;
 }
-.guitar-img-container img{
-    
+.guitar-img-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+.guitar-img-container .guitar-img{
     width: 130px;
-    margin: 0 auto;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
 }
 .card-body{
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
     gap: 2px; 
     padding: 5px 5px 0 5px;
+    height: 235px;
+    
 }
 .card-body .guitar-tarjeta-title{
     font-size: 13px;
+    height: 47px;
     text-transform: uppercase;
     box-sizing: border-box;
     text-align: center;
+    align-self: center;
 }
 
 .card-body .guitar-tarjeta-price{
@@ -152,7 +145,7 @@ body{
 }
 .card-body .guitar-tarjeta-info-card span{
     font-size: 10px;
-    background-color:rgb(134, 15, 177);
+    background-color:var(--color-letras-btn);
     padding: 1px 5px;
     border-radius: 10px;
     align-self: center;
@@ -175,21 +168,27 @@ body{
     min-width: 100%;
     max-height: 30px;
     box-sizing: border-box;
+    margin: auto;
     margin-bottom: 10px;
+    position: relative;
 }
 
 .btn-information{
+    position: absolute;
+    top: -37px;
+    left: 40px;
     color: black;
     padding: 4px 25px;
     border: none;
     border-radius: 20px;
     margin-bottom: 20px;
-    box-shadow: 3px 3px 2px rgb(62, 12, 65);
+    box-shadow: var(--box-shadow-gris);
 }
 .btn-information:hover{
-    background-color: rgb(17, 6, 21);
-    box-shadow: 2px 1px 1px #000;
-    color: #fff;
+    opacity: 0.8;
+    transform: translateY(-0.8px) scale(.95);
+    box-shadow: var(--box-shadow-gris-hover);
+
 }
 /* --------------------------- ITEM COUNT -------------------------------- */
 .agregar-guitars{
@@ -211,11 +210,11 @@ body{
     background-color: #fff;
     padding: 3px 5px;
     border-radius: 40px;
-    box-shadow: 2px 2px 2px #000;
+    box-shadow: var(--box-shadow-gris);
 }
 #pantalla button{
-    width: 40px;
-    height: 40px;
+    width: 24px;
+    height: 24px;
     color: #000;
     font-size: 30px;
     font-weight: 900;
@@ -224,8 +223,7 @@ body{
     text-align: center;
     justify-content: center;
     align-items: center;
-    border: 2px solid #000;
-    box-shadow: 2px 2px 2px #000;
+    box-shadow: var(--box-shadow-gris);
 
 }
 #cantidad{
@@ -235,7 +233,6 @@ body{
     text-align: center;
     padding: 0;
     color: #000;
-
 }
 
 .tarjeta-inferior{
@@ -260,10 +257,11 @@ body{
     font-weight: 900;
     color: black;
     margin-left: 3px;
-    padding: 10px 10px;
+    padding: 5px 10px;
     border-radius: 20px;
+    border: 1px solid rgb(0, 0, 0);
     font-size: 14px;
-    box-shadow: 2px 2px 2px #000; 
+    box-shadow: var(--box-shadow-gris);
 }
 .tarjeta-inferior #agregar:disabled{
     opacity: 0.9;
@@ -272,10 +270,9 @@ body{
 
 
 .tarjeta-inferior #terminar-compra{
-    background-color:rgb(38,3,63);
+    background-color:#04D4C1;
     color: rgb(255, 255, 255);    
-    border:none;
-    box-shadow: 2px 2px 2px #000;
+    box-shadow: var(--box-shadow-gris);
 }
 /* --------------------------- ITEM DETAIL -------------------------------- */
 .item-detail-container-principal{
@@ -290,12 +287,12 @@ body{
     position: absolute;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin-top: 100px;
+    margin-top: 10px;
     gap: 5em;
 }
 .item-detail-image{
     width: 350px;
-    height: 500px;
+    height: 400px;
     background-color: #fff;
     border-radius: 10%;
 }
@@ -308,11 +305,16 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    margin: 0;
+}
+.item-detail-description hr{
+    margin: 2px 0;
 }
 .item-detail-container h1{
-    font-size: 30px;
+    font-size: 20px;
     margin: 0;
-    color: rgb(219, 173, 236);
+    color: rgb(182, 248, 243);
 }
 .item-detail-description div:nth-child(2) td{
     font-size: 12px;
@@ -320,18 +322,30 @@ body{
 }
 .item-detail-box{
     display: flex;
-    
+    align-items: center;
+    font-size: 12px;
+    gap: 10px;
+    height: 2em;
+}
+.item-detail-box .item-detail-explanation{
+    margin-left: 15px;
+}
+.item-detail-box .tabla-cart td{
+    font-size: 9px;
+    padding: 2px 5px;
 }
 .precios{
     display: flex;
-    gap: 10px;
-    margin: 0 auto;
-    font-size: 25px;
+    justify-content: center;
+    gap: 20px;
+    font-size: 20px;
+
 }
 .item-detail-price-af{
     text-decoration: line-through;
     color: rgb(173, 181, 187);
-
+    font-size: 13px;
+    align-self: center;
 }
 
 /* --------------------------- PIE PAGINA -------------------------------- */

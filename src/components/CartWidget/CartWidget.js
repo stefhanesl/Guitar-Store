@@ -4,6 +4,7 @@ import { MdShoppingCart } from 'react-icons/md';
 import './../style/navbar.css'
 import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext/CartContext';
+import './cartwidget.css'
 
 export const CartWidget = ({agregarValorCarrito}) => {
     const { total } = useContext(CartContext);
@@ -13,7 +14,7 @@ export const CartWidget = ({agregarValorCarrito}) => {
                 total > 0  
                     ?  <>
                             <span id='cantidad-carrito'>{total}</span>
-                            <MdShoppingCart  id='car'/>
+                            <MdShoppingCart  id='car' size='40px' color='#04D4C1'/>
                         </>
                     : null
             }

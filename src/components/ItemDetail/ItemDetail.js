@@ -11,35 +11,35 @@ const ItemDetail = ({guitarra}) => {
     
     const {name, price, calification, images, features:{feature1, feature2, feature3}, stock} = guitarra;
 
-    const [actualizarStock, setActualizarStock] = useState(stock);
+
 
     const agregarAlCarrito = (count) => {
         addItem(guitarra, count)
     }
 
-    const updateStock = ()=>{
+    // const updateStock = ()=>{
 
-        listaProductosCarrito.forEach( producto => {
+    //     listaProductosCarrito.forEach( producto => {
 
-            const {calification, cantidad, categoria, discount, features, id, images,  name, price, stock} = producto
-            setActualizarStock(stock - cantidad)
-            const batch = writeBatch(db)
+    //         const {calification, cantidad, categoria, discount, features, id, images,  name, price, stock} = producto
+    //         setActualizarStock(stock - cantidad)
+    //         const batch = writeBatch(db)
 
-            batch.update(id, {
-                calification: calification,
-                categoria: categoria,
-                discount: discount,
-                features: features,
-                id: id,
-                images: images,
-                name: name,
-                price: price,
-                stock: stock - cantidad,
-            })
+    //         batch.update(id, {
+    //             calification: calification,
+    //             categoria: categoria,
+    //             discount: discount,
+    //             features: features,
+    //             id: id,
+    //             images: images,
+    //             name: name,
+    //             price: price,
+    //             stock: stock - cantidad,
+    //         })
 
-            batch.commit()
-        });
-      }
+    //         batch.commit()
+    //     });
+    //   }
 
     return (
         <div className='item-detail-container-principal'>
@@ -84,18 +84,19 @@ const ItemDetail = ({guitarra}) => {
                                 <li><span className='like'>🤍</span> Favorito</li>
                             </ul>
                         </div>
+                        <div class="item-detail-explanation">
+                            <Table striped bordered hover variant="dark" className='tabla-cart'>
+                                <thead>
+                                    <tr>
+                                        <td>STOCK</td>
+                                        <td>{stock}</td>
+                                    </tr>
+                                </thead>
+                            </Table>
+                        </div>
                     </div>
-                    <div class="item-detail-explanation">
-                        <Table striped bordered hover variant="dark" className='tabla-cart'>
-                            <thead>
-                                <tr>
-                                    <td>STOCK</td>
-                                    <td>{actualizarStock}</td>
-                                </tr>
-                            </thead>
-                        </Table>
-                    </div>
-                    <ItemCount  stock={actualizarStock} agregarAlCarrito={agregarAlCarrito}/>
+
+                    <ItemCount  stock={stock} agregarAlCarrito={agregarAlCarrito}/>
                 </div>
             </div>
 
