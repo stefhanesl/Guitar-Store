@@ -56,7 +56,7 @@ body{
     text-decoration: none;
 }
 .barra-top ul li.nav-icono ul{
-    margin-left: 18rem;
+    margin-left: 24rem;
 }
 
 .barra-top ul li.nav-tema:hover{
@@ -87,24 +87,13 @@ body{
 }
 
 #carrito{
-    margin-left: 30px;
     position: relative;
     display: flex;
     align-items: flex-end;
-    top: 20%;
+    margin-bottom: 2px;
 }
 #carrito:hover{
     opacity: 0.7;
-}
-#cantidad-carrito{
-    color: #212121;
-    background-color: #fff;
-    position: absolute;
-    right: -50%;
-    top: -10%;
-    padding: 0 5px;
-    border-radius: 50%;
-    font-size: 13px;
 }
 
 .cart-container{
@@ -154,4 +143,8 @@ body{
     background-color: rgb(4, 212, 193, 0.6);
     color: #fff;
     
+}
+.nav-icono li:nth-child(3) h5{
+    font-size: 10px;
+    color: #04D4C1;
 }

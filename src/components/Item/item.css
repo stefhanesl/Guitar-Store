@@ -1,0 +1,142 @@
+.guitar-tarjeta{
+    width: 100%;
+    color: #fff;
+    position: relative;
+    background-color: var(--color-fondo);
+    overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: var(--box-shadow-gris)
+
+}
+.guitar-tarjeta:hover{
+    box-shadow: var(--box-shadow-gris-hover);
+
+}
+.guitar-tarjeta .card-body{
+    width: 100%;
+    background-color: var(--color-fondo);
+
+}
+.guitar-tarjeta-descuento{
+    width: 100%;
+    position: absolute;
+    color: #fff;
+    font-weight: 800;
+    top: -2px;
+}
+.descuento-red{
+    width: 100%;
+    font-size: 15px;
+    background-color: rgb(243, 28, 28, 0.8);
+    padding: 2px 10px;
+}
+.descuento-green{
+    position: absolute;
+    background-color: rgba(10, 232, 10, 0.7);
+    font-size: 15px;
+    font-weight: 700;
+    padding: 20px 2px ;
+    border-radius: 100%;
+    right: 5px;
+    top: 5px;
+}
+.guitar-tarjeta .guitar-img-container{
+    width: 100%;
+    background-color: #fff;
+    padding: 20px 0px 10px 0px;
+}
+.guitar-img-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+.guitar-img-container .guitar-img{
+    width: 130px;
+}
+.card-body{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px; 
+    padding: 5px 5px 0 5px;
+    height: 235px;
+    
+}
+.card-body .guitar-tarjeta-title{
+    font-size: 13px;
+    height: 47px;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    text-align: center;
+    align-self: center;
+}
+
+.card-body .guitar-tarjeta-price{
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.card-body .guitar-tarjeta-price-before{
+    text-decoration: line-through;
+    font-size: 12px;
+    margin-left: 10px;
+}
+.card-body .guitar-tarjeta-info-card{
+    display: flex;
+    margin-left: 10px;
+    gap: 10px;
+}
+.card-body .guitar-tarjeta-info-card span{
+    font-size: 10px;
+    background-color:var(--color-letras-btn);
+    padding: 1px 5px;
+    border-radius: 10px;
+    align-self: center;
+}
+.card-body .guitar-tarjeta-info-card img{
+    width: 50px;
+}
+.guitar-tarjeta-stars{
+    display: flex;
+    gap: 5px;
+    margin-left: 10px;
+}
+.guitar-tarjeta-stars-lista{
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+}
+.btn-visualizar-infomacion{
+    font-size: 12px;
+    min-width: 100%;
+    max-height: 30px;
+    box-sizing: border-box;
+    margin: auto;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.btn-information{
+    position: absolute;
+    top: -37px;
+    left: 40px;
+    color: black;
+    padding: 4px 25px;
+    border: none;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--box-shadow-gris);
+}
+.btn-information:hover{
+    opacity: 0.8;
+    transform: translateY(-0.8px) scale(.95);
+    box-shadow: var(--box-shadow-gris-hover);
+
+}

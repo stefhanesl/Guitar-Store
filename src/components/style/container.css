@@ -16,16 +16,13 @@
     font-family: 'Roboto', sans-serif;
     
 }
-html {
-    position: relative;
-  }
+
 body{
     background-color: var(--color-fondo);
-
 }
 
 /* --------------------------- ITEM LIST -------------------------------- */
-
+/* 
 .guitars-grid{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -46,9 +43,9 @@ body{
     text-decoration: none;
     box-sizing: border-box;
 
-}
+} */
 /* --------------------------- ITEM -------------------------------- */
-.guitar-tarjeta{
+/* .guitar-tarjeta{
     width: 100%;
     color: #fff;
     position: relative;
@@ -189,7 +186,7 @@ body{
     transform: translateY(-0.8px) scale(.95);
     box-shadow: var(--box-shadow-gris-hover);
 
-}
+} */
 /* --------------------------- ITEM COUNT -------------------------------- */
 .agregar-guitars{
     color: #fff;
@@ -350,7 +347,7 @@ body{
 
 /* --------------------------- PIE PAGINA -------------------------------- */
 
-body #pie-pagina{
+/* body #pie-pagina{
     width: 100%;
     position: absolute;
     margin: 0 auto;
@@ -397,5 +394,5 @@ body #pie-pagina{
     align-self: flex-start;
     color: rgb(188, 188, 234);
     text-decoration: none;
-}
+} */
 

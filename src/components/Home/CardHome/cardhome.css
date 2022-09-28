@@ -1,31 +1,11 @@
-
-
-  @font-face {
-    font-family: 'Source Sans Pro';
-    font-style: normal;
-    font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/sourcesanspro/v21/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7g.ttf) format('truetype');
-  }
-  @font-face {
-    font-family: 'Source Sans Pro';
-    font-style: normal;
-    font-weight: 700;
-    src: url(https://fonts.gstatic.com/s/sourcesanspro/v21/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwlxdr.ttf) format('truetype');
-  }
-  @font-face {
-    font-family: 'Source Sans Pro';
-    font-style: normal;
-    font-weight: 900;
-    src: url(https://fonts.gstatic.com/s/sourcesanspro/v21/6xKydSBYKcSV-LCoeQqfX1RYOo3iu4nwlxdr.ttf) format('truetype');
-  }
-
-  body {
-
-    font-family: 'Source Sans Pro', sans-serif;
-
-  }
-
-  .home-principal{
+:root{
+  --color-letras-btn: #04D4C1;
+  --color-tenue-celeste: #a4f4ed;
+  --color-fondo: #181616;
+  --box-shadow-gris: 0 2px 5px 0 rgba(228, 225, 225, 0.16), 0 2px 10px 0 rgba(207, 204, 204, 0.12);
+  --box-shadow-gris-hover: 0 2px 5px 0 rgba(228, 225, 225, 0.16), 0 2px 10px 0 rgba(207, 204, 204, 0.12);
+}
+ .home-principal{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,7 +18,6 @@
   justify-content: center;
   padding: 10px 0;
   margin: 10px 0;
-  margin-right: ;
   gap: 50px;
 }
 
@@ -68,6 +47,9 @@
 .container-home-main{
   width: 100%;
   padding: 10px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 }
 .container-home-secondary{
@@ -86,9 +68,9 @@
 
 /* ********************************************************************************** */
   a.btn, .flip-card-back a {
-    background:rgb(38,3,63);
+    background:var(--color-letras-btn);
     border-radius: 4px;
-    box-shadow: 0 2px 0px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: var(--box-shadow-gris-hover);
     color: #ffffff;
     display: inline-block;
     padding: 6px 30px 8px;
@@ -145,7 +127,7 @@
   }
 div.card-description{
     margin: 20px 0 5px 0;
-    color:rgb(38,3,63);
+    color: #5e5959;
 }
 
 /* ******************************************************************** */
@@ -195,8 +177,16 @@ div.card-description{
   
 
   .flip-card-front {
-    background-color: #bbb;
-    color: black;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .flip-card-front h1{
+    font-size: 50px;
+    padding: 10px;
+    background-color: var(--color-letras-btn);
+    opacity: 0.7;
   }
   .flip-card-back{
     position: relative;
@@ -219,7 +209,7 @@ div.card-description{
   }
   .flip-card-back a{
     width: 300px;
-    color: rgb(17,6,21);
+    color: var(--color-letras-btn);
     background-color: white;
     font-size: 20px;
     font-weight: 700;
@@ -229,7 +219,9 @@ div.card-description{
 
  
   .flip-card-back {
-    background-color: rgb(17,6,21);
+    background-color: rgb(110, 108, 111);
     color: white;
     transform: rotateX(-180deg);
+    display: flex;
+    gap: 30px;
   }

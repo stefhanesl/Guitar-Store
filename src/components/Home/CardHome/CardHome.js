@@ -1,5 +1,6 @@
+import { Link } from "react-router-dom";
 
-export default function CardHome({imagen, descripcion, ancho, image}) {
+export default function CardHome({imagen, descripcion, ancho, enlace}) {
     return (
         <>
             <div className="card card-second">
@@ -9,11 +10,11 @@ export default function CardHome({imagen, descripcion, ancho, image}) {
                     <div className="card-home-description">
                         <div className="card-description">
                             {descripcion}
-                            This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they're not available etc.
+                           
                         </div>
                         <div className="btn-card-home">
                             <div className="card-actions">
-                                <a href="#" className="btn">COMPRAR YA!</a>
+                                <Link to={enlace} className="btn">COMPRAR AHORA!</Link>
                             </div>
                         </div>
                     </div>

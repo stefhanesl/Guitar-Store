@@ -1,7 +1,7 @@
 import './../style/container.css'
 import Item from '../Item/Item';
 import {Link} from 'react-router-dom';
-
+import './itemlist.css'
 
 const ItemList = ({guitars}) => {
     

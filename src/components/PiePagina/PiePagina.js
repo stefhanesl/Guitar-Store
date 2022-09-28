@@ -3,7 +3,7 @@ import { FaTwitter } from 'react-icons/fa'
 import { BsFacebook } from 'react-icons/bs'
 import { AiFillGithub } from 'react-icons/ai'
 import { NavLink } from 'react-router-dom'
-
+import './piepagina.css'
 
 const PiePagina = () => {
   return (
@@ -41,7 +41,7 @@ const PiePagina = () => {
                 <li>                        <NavLink 
                             className={({isActive})=>isActive ? "claseActive": "claseInactive"}
                             to="/contacto">
-                            Contacto
+                            FAQ
                         </NavLink></li>
             </ul>
         </div>

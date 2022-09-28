@@ -38,36 +38,20 @@ const Home = () => {
                 </div>
                 <div className='container-home-main'>
                     <CardHome 
-                    imagen='\assets\carrousel-image1.webp'
-                        descripcion=''
-
+                        imagen='\assets\carrousel-image1.webp'
+                        descripcion='Cuenta con aros y fondo de cerezo silvestre, un acabado pulido personalizado semibrillante y una tapa de pícea maciza probada a presión. El sonido solo mejorará cuanto más se toque la guitarra con el tiempo.'
+                        enlace='/category/guitarra'
                     />
                     <CardHome 
-                    imagen='\assets\carrousel-image2.webp'
-                        descripcion=''
-
+                        imagen='\assets\img\cardhome.jpg'
+                        descripcion='Ahorre en la mayoría de las marcas en categorías populares al marcar +593-901-501-8110. Con una línea telefónica exclusiva, para obtener información detallada sobre productos y soporte técnico. '
+                        enlace='/contacto'
                     />
                     <CardHome 
-                    imagen='\assets\img-cart.jpg'
-                        descripcion=''
+                        imagen='\assets\card-home2.jpg'
+                        descripcion='Los tambores cuentan con tres nuevos acabados, un soporte de tom doble rediseñado, bloqueos de memoria en todas las patas de tom de piso, aros de triple pestaña de 2,3 mm para afinar la estabilidad.'
                         ancho='300px'
-                    />
-                </div>
-                <div className='container-home-secondary'>
-                    <CardHome 
-                    imagen='\assets\carrousel-image1.webp'
-                        descripcion=''
-
-                    />
-                    <CardHome 
-                    imagen='\assets\carrousel-image2.webp'
-                        descripcion=''
-
-                    />
-                    <CardHome 
-                    imagen='\assets\img-cart.jpg'
-                        descripcion=''
-                        ancho='300px'
+                        enlace='/category/accesorios'
                     />
                 </div>
                 <div className='container-home-third'>

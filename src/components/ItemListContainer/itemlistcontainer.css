@@ -1,0 +1,10 @@
+/* .contenedor-spinner{
+    position: absolute;
+    min-height: 100%;
+    top: 0; */
+
+.contenedor-general-productos{
+    max-width: 98%;
+    overflow-x: hidden;
+    min-height: 100vh;
+}

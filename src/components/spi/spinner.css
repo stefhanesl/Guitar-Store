@@ -1,5 +1,6 @@
-.contenedor-general-productos .contenedor-spinner{
-    margin-bottom: 400px;
+.contenedor-spinner{
+    position: relative;
+    margin-top: 20%;
 }
 .wrapper{
     width:200px;
@@ -8,6 +9,7 @@
     left:50%;
     top:120%;
     transform: translate(-50%, -50%);
+
 }
 .circle{
     width:30px;

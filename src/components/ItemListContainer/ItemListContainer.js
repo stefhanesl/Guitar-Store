@@ -5,7 +5,7 @@ import Spinner from '../spi/spinner';
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../utils/firebase";
 import { BuscadoresContext } from '../../context/BuscadoresContext/BuscadoresContext';
-
+import './itemlistcontainer.css'
 
 export const ItemListContainer = () => {
     const {tipoProducto} = useParams();
@@ -14,11 +14,17 @@ export const ItemListContainer = () => {
 
     const [guitars, setGuitars] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [actualizarValores, setActualizarValores] = useState({ nombreBuscadoProducto, marcaBuscadoProducto, precioBuscadoProducto })
+
+    const reiniciarFiltros = () => {
+        setActualizarValores({ nombreBuscadoProducto: '', marcaBuscadoProducto: '', precioBuscadoProducto: '' })
+        console.log(actualizarValores)
+    }
 
     useEffect(()=>{
-
+        reiniciarFiltros()
         const getProducts = async() => {
-
+        
             const consulta = !tipoProducto
                              ? collection(db,"products") 
                              : query(collection(db,"products"), where("categoria", "==", tipoProducto))
@@ -51,7 +57,7 @@ export const ItemListContainer = () => {
 
     return (
         <div className='contenedor-general-productos mg-top'>
-         
+
             { loading 
                 ?   <Spinner />
                 :   <div className='container-guitars' id='fondo'>

@@ -53,7 +53,7 @@ function App() {
 
                   </Routes>
                 </div>
-                {/* <PiePagina /> */}
+                <PiePagina />
               </div>
             </Router>
           </BuscadoresComponentContext>

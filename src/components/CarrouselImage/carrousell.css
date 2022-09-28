@@ -1,60 +1,34 @@
-/* .carousel .carousel-inner{
+ .carousel .carousel-inner{
+
     display: flex;
 }
+
 .carousel-item{
+    width: 100%;
     position: relative;
     height: 350px;
-    width: 900px;
     margin: 0 auto;
     
 }
 
 .carousel-item img{
-    padding-top: 30px;
+    padding-top: 10px;
     position: absolute;
     height: 90%;
     border-radius: 10px;
-} */
-.carousel-item-container img{
+} 
+ .carousel-item-container img{
     height: 350px;
 }
-.container-guitars{
-    max-width: 98%;
-    overflow-x: hidden;
-    margin:auto;
-}
 
-.contenedor-general-productos{
-    display: block;
-    position: relative;
-}
-.contenedor-general-productos::after{
-    content: "";
-    background-image: url('./../../../public/assets/img/fondo-store.jpg');
-    /* height: 100%; */
-    opacity: 0.2;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1; 
-    /* overflow: visible; */
-    /* background-position: center center; */
-    background-repeat: repeat;
-
-    /* background-attachment: fixed; */
-    /* -webkit-background-size: cover;
-    -moz-background-size: cover; */
-    /* background-size: cover; */
-}
 .caption-carrousell{
+
    display: flex;
    flex-direction: column;
    justify-content: end;
    align-items: flex-end;
-}
-.title-carrousell{
+} 
+ .title-carrousell{
     color: #fff;
     position: absolute;
     right: -20%;
@@ -70,4 +44,4 @@ p{
     position: absolute;
     right: -15%;
     top: -30%;
-}
+}  

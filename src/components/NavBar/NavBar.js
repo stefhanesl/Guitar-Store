@@ -8,7 +8,7 @@ import Buscador from './Buscador/Buscador';
 import { BuscadoresContext } from '../../context/BuscadoresContext/BuscadoresContext';
 
 
-const NavBar = ({agregarValorCarrito}) => {
+const NavBar = () => {
 
     const { buscarMarcaProducto, buscarPrecioProducto } = useContext(BuscadoresContext)
 
@@ -72,7 +72,7 @@ const NavBar = ({agregarValorCarrito}) => {
                     <NavLink
                         className={({isActive})=>isActive ? "claseActive": "claseInactive"}
                         to="/contacto">
-                        Contacto
+                        FAQ
                     </NavLink>  
                 </li>
                 <li className='nav-icono'>
@@ -97,7 +97,7 @@ const NavBar = ({agregarValorCarrito}) => {
                         <li>
                             <NavLink to='/cart' className='div-nav'>
                                 <div id='carrito'>
-                                   <CartWidget />
+                                    <CartWidget />
                                 </div>
                             </NavLink>
                         </li>
@@ -131,7 +131,7 @@ const NavBar = ({agregarValorCarrito}) => {
                 |
                 <li> 
                     <ul>
-                        <li>
+                        {/* <li>
                             <label for="marcas">Marcas</label>
                             <select name="marcas" id="marcas" onChange={handleChange}>
                                 <option value=""></option>
@@ -140,16 +140,16 @@ const NavBar = ({agregarValorCarrito}) => {
                                 <option value="odyssey">Odyssey</option>
                                 <option value="rogue">Rogue</option>
                             </select>
-                        </li>
-                        |
-                        <li>
+                        </li> */}
+                        
+                        {/* <li>
                             <form onSubmit={onSubmit}>
                                 <label for="precios">Precios</label>
                                 <input type='text' onChange={preciosChange} name="precioMin" placeholder='min' id="precio-min"/>
                                 <input type='text' onChange={preciosChange}  name="precioMax" placeholder='max' id="precio-max"/>
                                 <button type='submit'>Ir</button>
                             </form>
-                        </li>
+                        </li> */}
                     </ul>
                 </li>
             </ul>
