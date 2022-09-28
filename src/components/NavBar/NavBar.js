@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './../style/navbar.css'
 import { NavLink }  from 'react-router-dom';
 import { CartWidget } from '../CartWidget/CartWidget';
-import {BsPersonFill} from 'react-icons/bs'
+import {FaMoneyCheckAlt} from 'react-icons/fa'
 import Buscador from './Buscador/Buscador';
 import { BuscadoresContext } from '../../context/BuscadoresContext/BuscadoresContext';
 
@@ -88,9 +88,9 @@ const NavBar = ({agregarValorCarrito}) => {
                             <div id='iniciar-sesion' className='div-nav'>
                                 <NavLink
                                     className={({isActive})=>isActive ? "claseActive": "claseInactive"}
-                                    to="/iniciar-sesion">
-                                        <BsPersonFill color='#04D4C1'/>
-                                        <h5>Iniciar Sesión</h5>
+                                    to="/registrarse">
+                                        <FaMoneyCheckAlt color='#04D4C1' size='40px'/>
+                                        <h5>FACTURAR</h5>
                                 </NavLink>  
                             </div>
                         </li>

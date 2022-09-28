@@ -1,14 +1,70 @@
-import React, { useState } from 'react' 
+import React, { useState, useEffect, useSyncExternalStore } from 'react' 
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import './iniciarsesion.css'
 import { Link } from 'react-router-dom';
+import { collection, getDocs } from "firebase/firestore";
+import { db } from '../../utils/firebase';
+import { useNavigate } from 'react-router-dom';
 
 const IniciarSesion = () => {
+    const history = useNavigate()
+    const [formularioEnviado, setFormularioEnviado] = useState(false);
+    let [usuario, setUsuario] = useState({})
+    const [loadingSesion, setloadingSesion] = useState(false);
+    const [existe, setExiste] = useState({})
 
- const [formularioEnviado, setFormularioEnviado] = useState(false);
+    const getDataForm = (e) => {
+        e.preventDefault()
+  
+        setUsuario( {
+            correo: e.target[0].value, 
+            contrasena: e.target[1].value
+        })
+    }
+    const validando = (condicion) => {
+        setFormularioEnviado(true);
+        if(condicion){
+            setloadingSesion(true)
+            history.push('/')
+        }
+        setTimeout(() => {
+            setFormularioEnviado(false)
+            setloadingSesion(false)
+        }, 2000)
+    }
+
+
+    useEffect(()=>{
+
+        const getProducts = async() => {
+
+            const consulta = collection(db,"users") 
+
+            const response = await getDocs(consulta);
+            
+            const docs = response.docs;
+
+            let respuesta = docs.map(doc=>{return {...doc.data(), id:doc.id} })
+
+            
+            const existeCorreo = respuesta.find( user => user.buyer.correo === usuario.correo )
+            if(existeCorreo){
+                if( existeCorreo.buyer.contrasena === usuario.contrasena ){
+                    validando(true)
+                    setExiste(existeCorreo)
+                    console.log(existeCorreo)
+                    return;
+                }
+            }
+            validando(false)
+        }
+        getProducts()
+    },[usuario])
+
+
 
   return (
-    <div className='contenedor-sesion'>
+    <div>
         <ul>
             <li className='contenedor-formulario-sesion'>
                 <Formik
@@ -36,15 +92,12 @@ const IniciarSesion = () => {
                         }
                     }
                     onSubmit = {(valores, {resetForm}) => {
-                            resetForm();
-                            setFormularioEnviado(true);
-                            setTimeout(() => setFormularioEnviado(false), 3000)
-
+                            resetForm();                           
                         }}
                 >
                     {   ( { errors } ) => (
 
-                        <Form className='form-iniciar-sesion'>
+                        <Form className='form-iniciar-sesion' onSubmit={getDataForm}>
                             <div className='form-item'>
                                 <label htmlFor='correo'>Correo</label>
                                 <Field 
@@ -66,7 +119,13 @@ const IniciarSesion = () => {
                                 <ErrorMessage name='contrasena' component={() => (<div className='error'>{errors.contrasena}</div>)}/>
                             </div>
                             <button type='submit' id='btn-sesion'>Iniciar Sesión</button>
-                            {formularioEnviado && <p className='exito'>Ha iniciado sesión exitosamente.</p>}
+                            {   formularioEnviado && loadingSesion 
+                                ? <div className='mensaje exito'>Ha iniciado sesión exitosamente.</div>
+                                : formularioEnviado && !loadingSesion
+                                ? <div className='mensaje errores'>El correo o la contraseña no son válidos.</div>
+                                : null
+                            }
+                
                             <h3>Aún no tengo cuenta.  
                             <Link to='/registrarse' id='signUp'>
                                  Registrarme.

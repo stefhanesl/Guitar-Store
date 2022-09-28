@@ -79,11 +79,7 @@ const ItemDetail = ({guitarra}) => {
                                 <li>⭐ {calification}</li>
                             </ul>
                         </div>
-                        <div className='item-detail-heart'>
-                            <ul>
-                                <li><span className='like'>🤍</span> Favorito</li>
-                            </ul>
-                        </div>
+ 
                         <div class="item-detail-explanation">
                             <Table striped bordered hover variant="dark" className='tabla-cart'>
                                 <thead>

@@ -1,21 +1,69 @@
-import React, { useState } from 'react' 
+import React, { useState} from 'react' 
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import '../IniciarSesion/iniciarsesion.css'
+import { addDoc, collection} from 'firebase/firestore'
+import { db } from '../../utils/firebase';
+import { useContext } from 'react';
+import { CartContext } from '../../context/CartContext/CartContext';
+import CreditCard from '../TarjetaPago/TarjetaPago.js';
+
 const Registrarse = () => {
+    const { listaProductosCarrito, totalCompra } = useContext(CartContext);
 
     const [formularioEnviado, setFormularioEnviado] = useState(false);
 
+    const [confirmacion, setConfirmacion] = useState(false);
+
+  const [isfull, setIsFull] = useState(false)
+
+    const getDataForm = (e) => {
+        e.preventDefault()
+
+        const orden = {
+            buyer: {
+                nombre: e.target[0].value, 
+                correo: e.target[1].value, 
+                telefono: e.target[2].value,
+                genero: e.target[3].value,
+            },
+            items: listaProductosCarrito,
+            date: new Date(),
+            total: totalCompra
+        }
+        const orderCollection = collection(db, 'users');
+
+        addDoc(orderCollection, orden).then((respuesta) => {
+            
+            setConfirmacion(true)
+        })
+    }
+
+    var handleReset = (values, formProps) => {
+        return window.confirm('Reset?'); 
+    };
+    function validacionTarjeta(condicion){
+        setIsFull(condicion)
+        setTimeout(() => {
+            setConfirmacion(false)
+            setIsFull(false)
+        }, 2000)
+
+    }
 
   return (
     <div class="container-registrarse">
-        <ul>
-            <li className='contenedor-formulario-sesion'>
+        <div className='tarjeta-de-credito'>
+            <CreditCard validacionTarjeta={validacionTarjeta}/>
+        </div>
+        <div>
+            <h3> {confirmacion && 'Su cuenta ha sido creada exitosamente.' }</h3>
+            <div className='contenedor-formulario-sesion'>
                 <Formik
                 
                     initialValues={{
                         nombre: '',
                         correo: '',
-                        contrasena: '',
+                        telefono: '',
                         sexo: '',
                         requerimiento: ''
                     }}
@@ -31,10 +79,10 @@ const Registrarse = () => {
                             }else if(!/^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/){
                                 errores.correo = 'El correo solo puede contener letras, numeros, puntos y guiones.'
                             }
-                            if(!valores.contrasena){
-                                errores.contrasena = 'Por favor, ingrese una contraseña.'
-                            }else if(!/^[a-zA-Z0-9_.-]+$/){
-                                errores.contrasena = 'La contraseña solo puede contener letras, numeros, puntos y guiones.'
+                            if(!valores.telefono){
+                                errores.telefono = 'Por favor, ingrese su telefono.'
+                            }else if(!/[0-9]/){
+                                errores.telefono = 'Ingrese numeros'
                             }
                             if(!valores.sexo){
                                 errores.sexo = 'Por favor, ingrese su género.'
@@ -45,13 +93,19 @@ const Registrarse = () => {
                             return errores;
                         }}
                         onSubmit = {(valores, {resetForm}) => {
+                            valores.preventDefault()
                             resetForm();
                             setFormularioEnviado(true);
                             setTimeout(() => setFormularioEnviado(false), 3000)
                         }}
+
+                        onReset={handleReset}
                 >
                     {   ( { errors } ) => (
-                        <Form className='form-registrarse'>
+                        <Form className='form-registrarse' onSubmit={ () => {
+                                getDataForm()
+                            }}
+                            >
                             <div className='form-item-reg'>
                                 <label htmlFor='nombre'>Nombre</label>
                                 <Field
@@ -68,19 +122,19 @@ const Registrarse = () => {
                                     type="text"
                                     id='correo'
                                     name='correo'
-                                    placeholder='Escriba su nombre...'
+                                    placeholder='Escriba su correo...'
                                 />
                                 <ErrorMessage name='correo' component={() => (<div className='error'>{errors.correo}</div>)}/>
                             </div>
                             <div className='form-item-reg'>
-                                <label htmlFor='contrasena'>Contraseña</label>
+                                <label htmlFor='telefono'>Teléfono</label>
                                 <Field
-                                    type="password"
+                                    type="number"
                                     id='contrasena'
-                                    name='contrasena'
-                                    placeholder='Escriba su nombre...'
+                                    name='telefono'
+                                    placeholder='Escriba su teléfono...'
                                 />
-                                <ErrorMessage name='contrasena' component={() => (<div className='error'>{errors.contrasena}</div>)}/>
+                                <ErrorMessage name='telefono' component={() => (<div className='error'>{errors.telefono}</div>)}/>
                             </div>
                             <div className='form-item-reg form-item-sex'>
                                 <label htmlFor='sexo'>
@@ -99,6 +153,10 @@ const Registrarse = () => {
                                 </label>
                                 <ErrorMessage name='sexo' component={() => (<div className='error'>{errors.sexo}</div>)}/>
                             </div>
+                            <div className='form-item-reg'>
+                                <label>Total a Pagar</label>
+                                <div id='total-compra'>${totalCompra}</div>
+                            </div>
                             <div className='form-item-reg form-item-politicas'>
                                 <label htmlFor='requerimiento'>
                                     <Field
@@ -110,18 +168,22 @@ const Registrarse = () => {
                                 </label>
                                 <ErrorMessage name='requerimiento' component={() => (<div className='error'>{errors.requerimiento}</div>)}/>
                             </div>
-                            <button type='submit' id='btn-registrarse'>Registrarse</button>
-                            {formularioEnviado && <p className='exito'>Ha completado su registro.</p>}
+                            
+                            <button type='submit' id='btn-registrarse'>Pagar</button>
+                            {formularioEnviado && isfull
+                                ? <div className='mensaje exito'>Ha completado su registro.</div>
+                                : formularioEnviado && !isfull
+                                ? <div className='mensaje errores'>No ha completado su registro.</div>
+                                : null
+                            }
                         </Form>
                     )}
                 </Formik>
-            </li>
-            <li className='portada-registrarse'>
-                <div className='portada-registrarse-img'> 
-                    <img src='assets/portada.jpg' alt='portada' /> 
-                </div>
-            </li>
-        </ul>
+
+            </div>
+        </div>
+
+        
     </div>
   )
 }

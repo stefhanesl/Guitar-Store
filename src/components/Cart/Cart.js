@@ -11,7 +11,7 @@ import { GiReturnArrow } from 'react-icons/gi'
 import Formulario from '../Formulario/Formulario';
 import { addDoc, collection} from 'firebase/firestore'
 import { db } from '../../utils/firebase';
-
+import { FaMoneyCheckAlt } from 'react-icons/fa'
 
 const CartPagina = () => {
 
@@ -38,8 +38,6 @@ const CartPagina = () => {
             
             setOrderId(respuesta.id)
         })
-
-      
     }
     
     
@@ -92,16 +90,34 @@ const CartPagina = () => {
                     </Table>
             }
             <tr></tr>
-            <Formulario getDataForm={getDataForm}/>
-            <div> {orderId && `El orden de su compra es ${orderId}. ¡Gracias por su compra!`}</div>
-            <tr></tr>
+
             <div className='btn-botones-cart'>
-                { listaProductosCarrito.length === 0 &&
-                    <Link to='/category'>
-                            <button className='btn-regresar-catalogo'><GiReturnArrow  size='40px' className='btn-icono'/>Regresar a la tienda</button>
-                    </Link>
-                }
-                <button onClick={()=> clear()} className='btn-vaciar-carrito'><MdCleaningServices size='40px' className='btn-icono'/>Vaciar Carrito</button>
+                <div>
+                    { listaProductosCarrito.length === 0 &&
+                        <Link to='/category'>
+                                <button className='btn-regresar-catalogo'>
+                                    <GiReturnArrow  size='40px' className='btn-icono'/>
+                                    Regresar a la tienda
+                                </button>
+                        </Link>
+                    }
+                </div>
+                <div id='btn-facturar'>
+                    <Link
+                        className={({isActive})=>isActive ? "claseActive": "claseInactive"}
+                        to="/registrarse">
+                        <button className='btn-regresar-catalogo'>
+                        <FaMoneyCheckAlt  size='40px' className='btn-icono'/>
+                        Facturar Compra
+                        </button>
+                    </Link> 
+                </div>
+                <div>
+                    <button onClick={()=> clear()} className='btn-vaciar-carrito'>
+                        <MdCleaningServices size='40px' className='btn-icono'/>
+                        Vaciar Carrito
+                    </button>
+                </div>
             </div>
         </div>
     );
