@@ -4,35 +4,33 @@ Este proyecto es sobre una tienda de guitarras, donde hay un catálogo de produc
 
 ## **Objetivo:** 
 El proposito de este proyecto es aplicar conceptos como: la creación de componentes, pasar datos a traves de propiedades a componentes hijos, pasarle eventos al componente padre, aplicar navegación dinamica, entre otros conceptos.
-<br>
+
 
 
 ## Visualización del proyecto:
-<Image>
+
+Pagina:[https://tienda-de-guitarras-salguero-uzld.vercel.app/](https://tienda-de-guitarras-salguero-uzld.vercel.app/)
+
 <div style='display:grid'>
   <div style = 'text-align:center; margin-bottom:'100px'>
-
   <div><img align="left" alt="gift proyecto" src="https://media.giphy.com/media/rO9UgkQXqjJMyNKgLE/giphy.gif" width="600" height="300" /></p>
  </p>
 </div>
-</Image>
 
-        '
-       
-       
-       
-       
-       
-       Pagina: 
-       
-       
-       
-       
-       
-       
-       '
-                                                      
-                                                      
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+
+            
+                                         
 ### Tecnologias usadas
 <ul>
   <li>HTML</li>
