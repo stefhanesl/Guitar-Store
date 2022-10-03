@@ -10,38 +10,39 @@ El proposito de este proyecto es aplicar conceptos como: la creación de compone
 ## Visualización del proyecto:
 <Image>
 <div style='display:grid'>
-  <p style = 'text-align:center; margin-bottom:'100px'>
-  <p><img align="right" alt="gift oriyecto" src="https://media.giphy.com/media/XhNyUhcHAEA5JFJfTG/giphy.gif" width="400" height="200" /></p>
-  <p style = 'text-align:left'><img align="left" alt="gift oriyecto" src="https://media.giphy.com/media/oVzNKAljBPTqy1ll0m/giphy.gif" width="400" height="200" /></p>
+  <div style = 'text-align:center; margin-bottom:'100px'>
+
+  <div><img align="left" alt="gift proyecto" src="https://media.giphy.com/media/rO9UgkQXqjJMyNKgLE/giphy.gif" width="600" height="300" /></p>
  </p>
 </div>
 </Image>
 
-"
-
-
-
-
-
-"
-" 
-
-
-
-
-
-"
-
-"
-
-
-"
+        '
+       
+       
+       
+       
+       
+       Pagina: 
+       
+       
+       
+       
+       
+       
+       '
+                                                      
+                                                      
 ### Tecnologias usadas
 <ul>
   <li>HTML</li>
   <li>CSS</li>
   <li>JavaScript</li>
   <li>React JS</li>
+  <li>Bootstrap</li>
+  <li>SweeteAlert</li>
+  <li>Firebase</li>
+        
 </ul>
 
 ## Dependencias
