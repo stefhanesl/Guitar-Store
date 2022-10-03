@@ -11,8 +11,8 @@ El proposito de este proyecto es aplicar conceptos como: la creación de compone
 <Image>
 <div style='display:grid'>
   <p style = 'text-align:center; margin-bottom:'100px'>
+  <iframe src="https://giphy.com/embed/rO9UgkQXqjJMyNKgLE" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/rO9UgkQXqjJMyNKgLE">via GIPHY</a></p>
   <p><img align="right" alt="gift oriyecto" src="https://media.giphy.com/media/XhNyUhcHAEA5JFJfTG/giphy.gif" width="400" height="200" /></p>
-  <p style = 'text-align:left'><img align="left" alt="gift oriyecto" src="https://media.giphy.com/media/oVzNKAljBPTqy1ll0m/giphy.gif" width="400" height="200" /></p>
  </p>
 </div>
 </Image>
