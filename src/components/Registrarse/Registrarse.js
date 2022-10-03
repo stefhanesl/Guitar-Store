@@ -18,7 +18,7 @@ const Registrarse = () => {
 
     const [isfull, setIsFull] = useState(false)
 
-    const [completado, setCompletado] = useState(false);
+    const [pagar, setPagar] = useState(totalCompra)
 
     const getDataForm = (e) => {
 
@@ -34,7 +34,7 @@ const Registrarse = () => {
             return;
         }
 
-        if (e.target[0].value === '' || e.target[1].value === '' || e.target[2].value === '' || e.target[3].value === '' || e.target[4].value === '') {
+        if (e.target[0].value === '' || e.target[1].value === '' || e.target[2].value === '' || e.target[3].value === '') {
             MySwal.fire({
                 title: <div>Todos los campos son obligatorios.</div>,
                 icon: 'error',
@@ -63,7 +63,7 @@ const Registrarse = () => {
             },
             items: listaProductosCarrito,
             date: new Date(),
-            total: totalCompra
+            total: pagar
         }
 
         const orderCollection = collection(db, 'users');
@@ -71,9 +71,8 @@ const Registrarse = () => {
         addDoc(orderCollection, orden).then((respuesta) => {
             mensajePago(respuesta.id)
         })
-
         e.target.reset()
-
+        setPagar(0)
     }
 
     const validacionTarjeta = (condicion) => {
@@ -83,22 +82,13 @@ const Registrarse = () => {
     const mensajePago = (IDcliente) => {
         MySwal.fire({
             title: <div>PAGO</div>,
-            text: `Su pago ha sido realizado exitosamente. Su numero de orden es: ${IDcliente}`,
             icon: 'success',
-            confirmButtonText: '¡Cool!',
-            confirmButtonColor: '#04D4C1'
+            showConfirmButton: false,
+            confirmButtonColor: '#04D4C1',
+            html: `Su pago ha sido realizado exitosamente. Su numero de orden es: ${IDcliente}. ` +
+                '<br></br>' +
+                '<a href="/category">Regresar a la tienda.</a>'
         })
-        setCompletado(true)
-        limpiarForm()
-    }
-
-    const limpiarForm = () => {
-        if (completado) {
-            setTimeout(() => {
-                window.location.reload(true)
-            }, 6000);
-        }
-        setCompletado(false)
     }
 
     return (
@@ -113,8 +103,7 @@ const Registrarse = () => {
                             nombre: '',
                             correo: '',
                             telefono: '',
-                            sexo: '',
-                            requerimiento: ''
+                            sexo: ''
                         }}
                         validate={(valores) => {
                             let errores = {}
@@ -135,9 +124,6 @@ const Registrarse = () => {
                             }
                             if (!valores.sexo) {
                                 errores.sexo = 'Por favor, ingrese su género.'
-                            }
-                            if (!valores.requerimiento) {
-                                errores.requerimiento = 'Por favor, acepte las términos y condiciones.'
                             }
                             return errores;
                         }}
@@ -196,18 +182,7 @@ const Registrarse = () => {
                                 </div>
                                 <div className='form-item-reg'>
                                     <label>Total a Pagar</label>
-                                    <div id='total-compra'>${totalCompra}</div>
-                                </div>
-                                <div className='form-item-reg form-item-politicas'>
-                                    <label htmlFor='requerimiento'>
-                                        <Field
-                                            type="checkbox"
-                                            name='requerimiento'
-                                            id='requerimiento'
-                                            value='requerimiento'
-                                        /> Acepto los términos y condiciones.
-                                    </label>
-                                    <ErrorMessage name='requerimiento' component={() => (<div className='error'>{errors.requerimiento}</div>)} />
+                                    <div id='total-compra'>${(pagar).toFixed(2)}</div>
                                 </div>
 
                                 <button type='submit' id='btn-registrarse'>Pagar</button>

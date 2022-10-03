@@ -11,8 +11,8 @@ const CartView = ({ producto, indice, removeItem }) => {
                 <td><img src={images} alt='producto' width='50px' /></td>
                 <td>{name}</td>
                 <td>{cantidad}</td>
-                <td>${price}</td>
-                <td>${(price * cantidad.toFixed(2))}</td>
+                <td>${(price).toFixed(2)}</td>
+                <td>${(price * cantidad).toFixed(2)}</td>
                 <td onClick={() => removeItem(id)}><RiDeleteBin6Line size='25px' /></td>
             </tr>
         </>
