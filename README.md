@@ -26,8 +26,6 @@ Pagina:[https://tienda-de-guitarras-salguero-uzld.vercel.app/](https://tienda-de
 <br></br>
 <br></br>
 <br></br>
-<br></br>
-<br></br>
 
             
                                          
