@@ -8,41 +8,31 @@ import { BuscadoresContext } from '../../context/BuscadoresContext/BuscadoresCon
 import './itemlistcontainer.css'
 
 export const ItemListContainer = () => {
-    const {tipoProducto} = useParams();
 
-    const { nombreBuscadoProducto, marcaBuscadoProducto, precioBuscadoProducto } = useContext(BuscadoresContext);
+    const { tipoProducto } = useParams();
+
+    const { nombreBuscadoProducto } = useContext(BuscadoresContext);
 
     const [guitars, setGuitars] = useState([]);
+
     const [loading, setLoading] = useState(true);
-    const [actualizarValores, setActualizarValores] = useState({ nombreBuscadoProducto, marcaBuscadoProducto, precioBuscadoProducto })
 
-    const reiniciarFiltros = () => {
-        setActualizarValores({ nombreBuscadoProducto: '', marcaBuscadoProducto: '', precioBuscadoProducto: '' })
-        console.log(actualizarValores)
-    }
+    useEffect(() => {
 
-    useEffect(()=>{
-        reiniciarFiltros()
-        const getProducts = async() => {
-        
+        const getProducts = async () => {
+
             const consulta = !tipoProducto
-                             ? collection(db,"products") 
-                             : query(collection(db,"products"), where("categoria", "==", tipoProducto))
-                              
+                                ? collection(db, "products")
+                                : query(collection(db, "products"), where("categoria", "==", tipoProducto))
+
             const response = await getDocs(consulta);
-            
+
             const docs = response.docs;
 
-            let respuesta = docs.map(doc=>{return {...doc.data(), id:doc.id} })
-            
-            if(nombreBuscadoProducto){
-                respuesta = respuesta.filter( producto => producto.name.toLowerCase().indexOf(nombreBuscadoProducto.toLowerCase()) !== -1 ) 
-            }
-            if(marcaBuscadoProducto){
-                respuesta = respuesta.filter( producto => producto.marca.toLowerCase() ===  marcaBuscadoProducto.toLowerCase()) 
-            }
-            if(precioBuscadoProducto.precioMin !== '' && precioBuscadoProducto.precioMax !== ''){
-                respuesta = respuesta.filter( producto => producto.price >= precioBuscadoProducto.precioMin && producto.price <= precioBuscadoProducto.precioMax) 
+            let respuesta = docs.map(doc => { return { ...doc.data(), id: doc.id } })
+
+            if (nombreBuscadoProducto) {
+                respuesta = respuesta.filter(producto => producto.name.toLowerCase().indexOf(nombreBuscadoProducto.toLowerCase()) !== -1)
             }
 
             setGuitars(respuesta)
@@ -52,17 +42,16 @@ export const ItemListContainer = () => {
 
         getProducts()
 
-    },[tipoProducto, nombreBuscadoProducto, marcaBuscadoProducto, precioBuscadoProducto])
+    }, [tipoProducto, nombreBuscadoProducto])
 
 
     return (
         <div className='contenedor-general-productos mg-top'>
-
-            { loading 
-                ?   <Spinner />
-                :   <div className='container-guitars' id='fondo'>
-                        <ItemList guitars={guitars}/>
-                    </div>
+            {loading
+                ? <Spinner />
+                : <div className='container-guitars' id='fondo'>
+                    <ItemList guitars={guitars} />
+                </div>
             }
         </div>
     );

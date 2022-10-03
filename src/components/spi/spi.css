@@ -1,61 +1,66 @@
-.body{
-    background-color: #000;
+.body {
+  background-color: #000;
 }
-  
-  .boxes {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background: rgb(12, 12, 12);
-    filter: blur(10px) contrast(18);
-    mix-blend-mode: screen;
+
+.boxes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: rgb(12, 12, 12);
+  filter: blur(10px) contrast(18);
+  mix-blend-mode: screen;
+}
+
+.box {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background: linear-gradient(112deg, #ffffff, #d1f3f7);
+}
+
+.box:nth-child(odd) {
+  animation: spinLeft 1.5s 0.1s linear both infinite;
+}
+
+.box:nth-child(even) {
+  animation: spinRight 0.5s 0.2s linear both infinite;
+}
+
+.box:nth-child(2n) {
+  animation: pulse 1s ease-in-out 0.1s infinite;
+}
+
+.box:nth-child(4n) {
+  animation-direction: reverse;
+}
+
+@keyframes pulse {
+  50% {
+    transform: scale(1.8);
   }
-  
-  .box {
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
-    background: linear-gradient(112deg, #ffffff, #d1f3f7);
+
+  70% {
+    transform: scale(0.6);
   }
-  
-  .box:nth-child(odd) {
-    animation: spinLeft 1.5s 0.1s linear both infinite;
+}
+
+@keyframes spinLeft {
+  from {
+    transform: rotate(0deg) translate(50px);
   }
-  
-  .box:nth-child(even) {
-    animation: spinRight 0.5s 0.2s linear both infinite;
+
+  to {
+    transform: rotate(360deg) translate(50px);
   }
-  
-  .box:nth-child(2n) {
-    animation: pulse 1s ease-in-out 0.1s infinite;
+}
+
+@keyframes spinRight {
+  from {
+    transform: rotate(360deg) translate(50px);
   }
-  
-  .box:nth-child(4n) {
-    animation-direction: reverse;
+
+  to {
+    transform: rotate(0deg) translate(50px);
   }
-  
-  @keyframes pulse {
-    50% {
-      transform: scale(1.8);
-    }
-    70% {
-      transform: scale(0.6);
-    }
-  }
-  @keyframes spinLeft {
-    from {
-      transform: rotate(0deg) translate(50px);
-    }
-    to {
-      transform: rotate(360deg) translate(50px);
-    }
-  }
-  @keyframes spinRight {
-    from {
-      transform: rotate(360deg) translate(50px);
-    }
-    to {
-      transform: rotate(0deg) translate(50px);
-    }
-  }
+}

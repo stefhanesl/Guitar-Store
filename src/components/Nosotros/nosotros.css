@@ -1,28 +1,32 @@
-.contenedor-nostros-gen{
+.contenedor-nostros-gen {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);   
+    grid-template-columns: repeat(2, 1fr);
     position: relative;
 }
 
-.contenedor-nostros{
+.contenedor-nostros {
     height: 100vh;
     padding: 30px 50px;
 }
-.introduccion{
+
+.introduccion {
     width: 500px;
     text-align: justify;
     margin-bottom: 40px;
     line-height: 30px;
 }
-.contenedor-nostros li{
+
+.contenedor-nostros li {
     width: 440px;
     text-align: justify;
     margin-top: 10px;
 }
-.contenedor-nostros li span{
+
+.contenedor-nostros li span {
     font-size: 30px;
 }
-#logo-nosotros{
+
+#logo-nosotros {
     width: 600px;
     position: absolute;
     top: 10%;

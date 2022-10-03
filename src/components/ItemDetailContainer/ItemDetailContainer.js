@@ -5,21 +5,22 @@ import Spi from '../spi/spi';
 import { db } from '../../utils/firebase'
 import { doc, getDoc } from 'firebase/firestore';
 
-const ItemDetailContainer = ({agregarAlCarrito}) => {
+const ItemDetailContainer = ({ agregarAlCarrito }) => {
+
     const { identificador } = useParams()
 
     const [product, setProduct] = useState({});
+
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const getProduct = async() => {
+        const getProduct = async () => {
             const consulta = doc(db, "products", identificador);
             const respuesta = await getDoc(consulta);
             const objeto = {
                 ...respuesta.data(),
                 id: respuesta.id
             }
-     
             setProduct(objeto)
             setLoading(false)
         }
@@ -27,15 +28,15 @@ const ItemDetailContainer = ({agregarAlCarrito}) => {
     }, [identificador]);
 
     return (
-        <div>    
-        {
-            loading 
-            ?   <Spi />
-            :   <div key={parseInt(product.id)} className='guitar-card' >
-                    <ItemDetail guitarra={product} agregarAlCarrito={agregarAlCarrito}/>
-                </div>
-             
-        }
+        <div>
+            {
+                loading
+                    ? <Spi />
+                    : <div key={parseInt(product.id)} className='guitar-card' >
+                        <ItemDetail guitarra={product} agregarAlCarrito={agregarAlCarrito} />
+                    </div>
+
+            }
         </div>
     );
 }

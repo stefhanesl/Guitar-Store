@@ -5,20 +5,18 @@
     --box-shadow-gris: 0 2px 5px 0 rgba(228, 225, 225, 0.16), 0 2px 10px 0 rgba(207, 204, 204, 0.12);
     --box-shadow-gris-hover: 0 2px 5px 0 rgba(228, 225, 225, 0.16), 0 2px 10px 0 rgba(207, 204, 204, 0.12);
 }
-body{
+footer{
+    background-color: var(--color-letras-btn);
     display: grid;
-    min-height: 100vh;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: 1fr auto;
 }
+
 
 body #pie-pagina{
     width: 100%;
-    position: absolute;
-    justify-content: center;
-    background-color: var(--color-letras-btn);
+    
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-
     padding: 20px;
 }
 .pie-pagina-listado{
@@ -35,19 +33,32 @@ body #pie-pagina{
 .pie-pagina-listado ul{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-}
-.pie-pagina-listado .redes{
-    display: flex;
-    flex-direction: row;
-    font-style: italic;
-    gap: 20px;
-    padding: 0 10px;
 }
 
 .pie-pagina-listado ul li a{
     align-self: flex-start;
     color: #fff;
     text-decoration: none;
+}
+.lista-productos ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 40px;
+}
+ul.redes {
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+}
+.redes li:nth-child(2) {
+    font-size: 40px;
+}
+.derechos{
+    z-index: 30;
+    text-align: center;
+    font-size: 20px;
 }

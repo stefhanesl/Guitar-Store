@@ -1,4 +1,4 @@
-:root{
+:root {
     --color-letras-btn: #04D4C1;
     --color-tenue-celeste: #a4f4ed;
     --color-fondo: #181616;
@@ -6,22 +6,25 @@
     --box-shadow-gris-hover: 0 2px 5px 0 rgba(228, 225, 225, 0.16), 0 2px 10px 0 rgba(207, 204, 204, 0.12);
 }
 
-.cart-container{
+.cart-container {
     position: relative;
     padding: 0;
     margin: 0;
 }
-.cart-container h1{
+
+.cart-container h1 {
     color: var(--color-tenue-celeste);
     text-align: center;
 }
-.cart-container-img{
+
+.cart-container-img {
     position: relative;
     width: 100%;
     height: 300px;
     overflow: hidden;
 }
-.cart-container-img{
+
+.cart-container-img {
     background-image: url('./../../../public/assets/portada.jpg');
     width: 100%;
     height: 250px;
@@ -31,32 +34,37 @@
     background-attachment: local;
 
 }
-.tabla-cart thead th{
+
+.tabla-cart thead th {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 3px;
     font-size: 25px;
 }
-.tabla-cart tbody td{
+
+.tabla-cart tbody td {
     text-align: center;
     text-transform: uppercase;
 
 }
-.tabla-cart tbody td h2{
+
+.tabla-cart tbody td h2 {
     font-size: 15px;
 }
-.table-total thead th{
+
+.table-total thead th {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
-.table-total thead th:nth-child(2){
+
+.table-total thead th:nth-child(2) {
     background-color: #ccfbf7;
     text-align: center;
     color: #000;
 }
 
-.btn-botones-cart{
+.btn-botones-cart {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -65,7 +73,7 @@
 
 }
 
-.btn-vaciar-carrito{
+.btn-vaciar-carrito {
     color: #fff;
     background: #000;
     padding: 4px 25px;
@@ -75,8 +83,9 @@
     width: 100%;
 
 }
+
 .btn-vaciar-carrito,
-.btn-regresar-catalogo{
+.btn-regresar-catalogo {
     width: 330px;
     height: 60px;
     color: #fff;
@@ -89,11 +98,13 @@
     box-shadow: var(--box-shadow-gris);
     font-size: 17px;
 }
+
 .btn-vaciar-carrito:hover,
-.btn-regresar-catalogo:hover{
+.btn-regresar-catalogo:hover {
     opacity: 0.8;
     box-shadow: var(--box-shadow-gris-hover);
 }
-.btn-icono{
+
+.btn-icono {
     margin-right: 10px;
 }

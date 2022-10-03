@@ -1,32 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Cards from "react-credit-cards";
 import "react-credit-cards/es/styles-compiled.css";
-import styles from "./tarjetapago.css";
+import "./tarjetapago.css";
 
-const CreditCard = ({validacionTarjeta}) => {
+const CreditCard = ({ validacionTarjeta }) => {
+
   const [number, SetNumber] = useState("");
   const [name, SetName] = useState("");
   const [month, SetMonth] = useState("");
   let [expiry, SetExpiry] = useState("");
   const [cvc, SetCvc] = useState("");
   const [focus, SetFocus] = useState("");
+
   const handleDate = (e) => {
     SetMonth(e.target.value);
     SetExpiry(e.target.value);
   };
+
   const handleExpiry = (e) => {
     SetExpiry(month.concat(e.target.value));
   };
-  if(number !== '' && name !== '' && month !== '' && expiry !== '' && cvc !== ''){
-    validacionTarjeta(true)
-  }
+
+  useEffect(() => {
+    if (number.length >= 16 && name.length >= 4 && month !== '' && expiry !== '' && cvc.length >= 3) {
+      validacionTarjeta(true)
+    }
+
+  }, [number, name, month, expiry, cvc, focus]);
+
+
 
   return (
     <>
       {/* <div className="rccs__card backcolor"> */}
 
-      <div clasName="rccs__card rccs__card--unknown">
+      <div className="rccs__card rccs__card--unknown">
         <Cards
           number={number}
           name={name}
@@ -40,14 +49,12 @@ const CreditCard = ({validacionTarjeta}) => {
       <form>
         <div className="row">
           <div className="col-sm-11">
-            <label for="name">Card Number</label>
+            <label htmlFor="name">Card Number</label>
             <input
               type="tel"
               className="form-control"
               value={number}
               name="number"
-              maxlength="16"
-              pattern="[0-9]+"
               onChange={(e) => {
                 SetNumber(e.target.value);
               }}
@@ -58,7 +65,7 @@ const CreditCard = ({validacionTarjeta}) => {
         <br />
         <div className="row">
           <div className="col-sm-11">
-            <label for="name">Card Name</label>
+            <label htmlFor="name">Card Name</label>
             <input
               type="text"
               className="form-control"
@@ -73,17 +80,10 @@ const CreditCard = ({validacionTarjeta}) => {
         </div>
         <br />
         <div className="row">
-          <div
-            className="col=sm-8"
-            style={{
-              ...{ "padding-right": "12em" },
-              ...{ "padding-left": "1em" }
-            }}
-          >
-            <label for="month">Expiration Date</label>
-          </div>
-
+          <label htmlFor="month">Expiration Date</label>
         </div>
+
+
 
         <div className="row">
           <div className="col-sm-4">
@@ -128,14 +128,13 @@ const CreditCard = ({validacionTarjeta}) => {
             </select>
           </div>
           <div className="col=sm-2">
-            <label for="cvv">CVV</label>
+            <label htmlFor="cvv">CVV</label>
           </div>
           <div className="col-sm-2">
 
             <input
               type="tel"
               name="cvc"
-              maxlength="3"
               className=" form-control card"
               value={cvc}
               pattern="\d*"

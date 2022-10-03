@@ -1,4 +1,4 @@
-#cantidad-carrito{
+#cantidad-carrito {
     color: #212121;
     background-color: #fff;
     position: absolute;
@@ -8,7 +8,8 @@
     border-radius: 50%;
     font-size: 13px;
 }
-.car-contenedor h5{
+
+.car-contenedor h5 {
     font-size: 10px;
     color: #04D4C1;
 }

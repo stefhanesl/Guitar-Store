@@ -8,10 +8,10 @@ export default function CardInfo(props) {
       </div>
       <div className='home-information-card-text'>
         <div className='home-information-card-title'>
-            {props.tituloInfo}
+          {props.tituloInfo}
         </div>
         <div className='home-information-card-desccription'>
-            {props.descriptionInfo}
+          {props.descriptionInfo}
         </div>
       </div>
     </div>

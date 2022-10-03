@@ -38,7 +38,7 @@ const CarrouselImage = () => {
                     alt="Third slide"
                     />
 
-                    <Carousel.Caption className='caption-carrousell'>
+                <Carousel.Caption className='caption-carrousell'>
                     <h3 className='title-carrousell'>Accesorios imprescindibles</h3>
                     <p>
                         Asegurese de estar listo para jugar.
