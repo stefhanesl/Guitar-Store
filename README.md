@@ -38,9 +38,9 @@ Pagina:[https://tienda-de-guitarras-salguero-uzld.vercel.app/](https://tienda-de
 
 ## Dependencias
 <ul>
-  <li>react-bootstrap: se utilizo en creación del acordeon de preguntas y respuestas, y en la tabla de lista de compras</li>
+  <li>react-bootstrap: se utilizo en creación del acordeon de preguntas y respuestas, y en la tabla de lista de compras.</li>
   <li>react-router-dom: se utilizo para darle una navegación dinamica a la pagina por medio de las categorías de los productos.</li>
-  <li>react-icons: se uso para importar el icono del carrito, icono de facturacion y redes sociales</li>
+  <li>react-icons: se uso para importar el icono del carrito, icono de facturacion y redes sociales.</li>
   <li>sweetalert: se uso para mostrar alertas al cliente, cuando no ha rellenado los campos y cuando se ha realizado la compra de forma exitosa.</li>
   <li>react-credit-cards: se utilizo para la creacion de la tarjeta de credito.</li>
   <li>Formik: se utilizo para la creacion de formulario de la compra.</li>
