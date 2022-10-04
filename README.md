@@ -14,7 +14,7 @@ Pagina:[https://tienda-de-guitarras-salguero-uzld.vercel.app/](https://tienda-de
 
 <div style='display:grid'>
   <div style = 'text-align:center; margin-bottom:'100px'>
-  <div><img align="left" alt="gift proyecto" src="https://media.giphy.com/media/rO9UgkQXqjJMyNKgLE/giphy.gif" width="600" height="300" /></p>
+  <div><img align="left" alt="gift proyecto" src="./guitar-store-react.gif"  /></p>
  </p>
 </div>
 
