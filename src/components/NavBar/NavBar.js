@@ -40,8 +40,8 @@ const NavBar = () => {
                     <li className='nav-tema'>
                         <NavLink
                             className={({ isActive }) => isActive ? "claseActive" : "claseInactive"}
-                            to="/contacto">
-                            FAQ
+                            to='/faq'>
+                           FAQ
                         </NavLink>
                     </li>
                     <li className='nav-icono'>
