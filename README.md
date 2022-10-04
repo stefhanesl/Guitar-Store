@@ -1,9 +1,10 @@
+# Desarrolladora: Karen Salguero
 # Información General
 
-Este proyecto es sobre una tienda de guitarras, donde hay un catálogo de productos de una tienda de música con sus respetivos detalles de los instrumentos y de los accesorios. En el catálogo se cuenta con tres categorías: guitarras, micrófonos, accesorios. En el detalle del producto se pueden observar las caracteristicas del mismo y unos botones para agregar la cantidad, agregar al carrito y terminar la compra. Cada uno de los elementos de la barra de navegación redirige a un nuevo link, y los del catálogo nos ayudan a filtrar los productos.
+Este proyecto es sobre una tienda de instrumentos musicales, en la cual hay un catálogo que estan dentro de varias categorías, como son: Guitarras, Micrófonos, Baterías, Banyo, Armónica, Amplificadores y Accesorios. En el detalle del producto se pueden observar las caracteristicas del mismo y unos botones para agregar la cantidad, agregar al carrito y terminar la compra. Cada uno de los elementos de la barra de navegación redirige a un nuevo link de los prodcutos o su vez se puede encontrar el producto escribiendolo en el buscador. Los datos son descargados en tiempo real desde Firebase, también se registra al cliente una vez que facture la compra.
 
 ## **Objetivo:** 
-El proposito de este proyecto es aplicar conceptos como: la creación de componentes, pasar datos a traves de propiedades a componentes hijos, pasarle eventos al componente padre, aplicar navegación dinamica, entre otros conceptos.
+El proposito de este proyecto es aplicar conceptos como: la creación de componentes, pasar datos a traves de propiedades a componentes hijos, pasarle eventos al componente padre, aplicar navegación dinamica, hacer pedidos de datos a una API(Firebase), entre otros conceptos.
 
 
 
@@ -22,14 +23,8 @@ Pagina:[https://tienda-de-guitarras-salguero-uzld.vercel.app/](https://tienda-de
 <br></br>
 <br></br>
 <br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-
-            
-                                         
-### Tecnologias usadas
+<br></br>                              
+## Tecnologias usadas
 <ul>
   <li>HTML</li>
   <li>CSS</li>
@@ -43,9 +38,13 @@ Pagina:[https://tienda-de-guitarras-salguero-uzld.vercel.app/](https://tienda-de
 
 ## Dependencias
 <ul>
-  <li>react-bootstrap: se utilizo en creación del NavBar</li>
-  <li>react-router-dom: se utilizo para darle una navegación dinamica a la pagina</li>
-  <li>react-icons: se uso para importar el icono del carrito</li>
+  <li>react-bootstrap: se utilizo en creación del acordeon de preguntas y respuestas, y en la tabla de lista de compras</li>
+  <li>react-router-dom: se utilizo para darle una navegación dinamica a la pagina por medio de las categorías de los productos.</li>
+  <li>react-icons: se uso para importar el icono del carrito, icono de facturacion y redes sociales</li>
+  <li>sweetalert: se uso para mostrar alertas al cliente, cuando no ha rellenado los campos y cuando se ha realizado la compra de forma exitosa.</li>
+  <li>react-credit-cards: se utilizo para la creacion de la tarjeta de credito.</li>
+  <li>Formik: se utilizo para la creacion de formulario de la compra.</li>
+  <li>Firebase: se utilizo para alimentar la aplicacion con los datos de la tienda.</li>
 </ul>
 
 
